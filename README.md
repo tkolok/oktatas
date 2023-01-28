@@ -5,6 +5,6 @@ Hogy miért pont JavaScript? Mert semmit nem kell telepíteni a használatához,
 
 ## "Fejlesztői környezet" megnyitása
 
-- [Google Chrome](https://www.google.com/chrome): Kattints jobb gombbal a weboldal bármely elemére, majd válaszd az Insepect/Vizsgálat lehetőséget.
-- [Microsoft Edge](https://www.microsoft.com/edge): Kattints jobb gombbal a weboldal bármely elemére, majd válaszd az Insepect/Vizsgálat lehetőséget.
+- [Google Chrome](https://www.google.com/chrome) / [Microsoft Edge](https://www.microsoft.com/edge): Kattints jobb gombbal a weboldal bármely elemére, majd
+válaszd az Vizsgálat (angolul Inspect) lehetőséget.
 - [Mozilla Firefox](https://www.mozilla.org/firefox): Tools > Web Developer > Web Developer Tools.
