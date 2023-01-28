@@ -43,10 +43,10 @@ b = b + b;
 ```
 
 ## Operators (Operátorok)
-- Arithmetic operators: +, -, *, /, %, ++, --
-- Assignment operators: =, +=, -=, *=, /=, %=
-- Comparison operators: ==, ===, !=, !==, >, <, >=, <=
-- Logical operators: &&, ||, !
+- Arithmetic operators: `+`, `-`, `*`, `/`, `%`, `++`, `--`
+- Assignment operators: `=`, `+=`, `-=`, `*=`, `/=`, `%=`
+- Comparison operators: `==`, `===`, `!=`, `!==`, `>`, `<`, `>=`, `<=`
+- Logical operators: `&&`, `||`, `!`
 
 ## Házi feladat
 
