@@ -1,6 +1,6 @@
 # 2. Óra
 
-## if...else utasítás
+## [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) utasítás
 
 ```javascript
 if (number % 2 === 0) {
@@ -10,7 +10,7 @@ if (number % 2 === 0) {
 }
 ```
 
-## switch utasítás
+## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) utasítás
 
 ```javascript
 switch (fruit) {
@@ -25,7 +25,7 @@ switch (fruit) {
 }
 ```
 
-## for utasítás
+## [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) utasítás
 
 ```javascript
 for (let i = 0; i < array.length; i++) {
@@ -33,7 +33,7 @@ for (let i = 0; i < array.length; i++) {
 }
 ```
 
-## while utasítás
+## [while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while) utasítás
 
 ```javascript
 let number = 0;
@@ -42,7 +42,7 @@ while (number < 10) {
 }
 ```
 
-## do...while utasítás
+## [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while) utasítás
 
 ```javascript
 let number = 0;
@@ -51,7 +51,7 @@ do {
 } while (number < 10);
 ```
 
-## break utasítás
+## [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break) utasítás
 
 ```javascript
 let number = 0;
@@ -63,7 +63,7 @@ while (true) {
 }
 ```
 
-## continue utasítás
+## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue) utasítás
 
 ```javascript
 let number = 0;
