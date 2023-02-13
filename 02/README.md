@@ -78,4 +78,11 @@ while (number < 10) {
 
 ## Házi feladat
 
-1. Írj kód részletet, amelyben
+1. Írj kód részletet, amelyben összehasonlítasz 2 számot! Ha megegyeznek, akkor azt iratod ki, hogy "Megegyeznek", egyébként "Nem egyeznek meg"!
+1. Írj kód részletet, amelyben kiiratod a 100-nál kisebb 5-tel osztható pozitív számokat!
+1. Írj kód részletet, amelyben kiiratod a 100-nál kisebb pozitív számok összegét!
+1. Írj kód részletet, amelyben kiiratod az első 10 pozitív szám négyzetét!
+1. Írj kód részletet, amelyben létrehozol egy 5 elemű szám tömböt, majd kiiratod a legnagyobb számot közülük!
+1. Írj kód részletet, amelyben létrehozol egy 5 elemű szám tömböt, majd kiiratod, hogy hányszor szerepelt a 4-es a tömbben!
+1. Írj kód részletet, amelyben létrehozol egy 5 elemű szám tömböt, majd az összes elemére kiiratod, hogy osztható 2-vel, 3-mal és 5-tel!
+1. Írj kód részletet, amelyben kiiratod a 100-nál kisebb Fibonacci számokat!
