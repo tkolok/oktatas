@@ -85,4 +85,7 @@ while (number < 10) {
 1. Írj kód részletet, amelyben létrehozol egy 5 elemű szám tömböt, majd kiiratod a legnagyobb számot közülük!
 1. Írj kód részletet, amelyben létrehozol egy 5 elemű szám tömböt, majd kiiratod, hogy hányszor szerepelt a 4-es a tömbben!
 1. Írj kód részletet, amelyben létrehozol egy 5 elemű szám tömböt, majd az összes elemére kiiratod, hogy osztható 2-vel, 3-mal és 5-tel!
+1. Írj kód részletet, amelyben létrehozol egy 5 elemű szám tömböt, majd visszafelé kiiratod az elemeit!
+1. Írj kód részletet, amelyben létrehozol egy akárhány elemű akármilyen tömböt! Ha páros számú elem található benne, akkor előre felé irasd ki az elemeket,
+   egyébként visszafelé!
 1. Írj kód részletet, amelyben kiiratod a 100-nál kisebb Fibonacci számokat!
