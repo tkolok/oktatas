@@ -108,3 +108,36 @@ while (b < 100) {
     b += a;
     a = b - a;
 }
+
+// Írj kód részletet, amelyben kiiratod egy 10 elemű tömb minden második elemét!
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for (let i = 0; i < array.length; i += 2) {
+    console.log(array[i]);
+}
+
+// Írj kód részletet, amelyben kiiratod létrehozol 2 darab 5 elemű szám tömböt, majd létrehozol egy üres tömböt! Az üres tömbbe a másik 2 tömb azonos indexű
+// elemeit összeadod!
+let a1 = [1, 2, 3, 4, 5];
+let a2 = [5, 4, 3, 2, 1];
+let sum = [];
+for (let i = 0; i < a1.length; i++) {
+    sum.push(a1[i] + a2[i]);
+}
+
+// Írj kód részletet, amelyben létrehozol egy 3 elemű tömböt, amelynek minden eleme egy 3 elemű szám tömb! Irasd ki az összes elemét!
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+        console.log(matrix[i][j]);
+    }
+}
+
+// Írj kód részletet, amelyben létrehozol egy üres tömböt! Ebbe addig teszel boolean értékekt, ameddig 10 elem lesz a tömbben!
+let array = [];
+while (array.length < 10) {
+    array.push(true);
+}
