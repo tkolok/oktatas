@@ -1,14 +1,23 @@
 # 3. Óra
 
 ## [Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) (függvények)
+A functionök (függvények) nem mások, mint újrafelhasználható paraméterezhető utasítás blokkok.
 
 ```javascript
-function sum(a, b) {
+function sum1(a, b) {
     return a + b;
 }
 
-let multiplication = (a, b) => a * b;
+let sum2 = (a, b) => {
+    return a + b;
+};
+
+let sum3 = (a, b) => a + b;
 ```
+
+## return
+A `return` kulcsszó után a function futása véget ér, és a function visszatér a `return` után álló érétkkel. Ha ez az érték nincs definiálva, vagy a function nem
+fut bele `return` utasításba, akkor `undefined` értékkel tér vissza a function. 
 
 ## [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) functions
 
