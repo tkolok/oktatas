@@ -94,120 +94,142 @@ A paraméterként megadott string alapján feldarabolja a stringet.
 
 ## [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) functions
 
-### [.forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+### [.forEach(callbackfn)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+A tömb minden elemére végrehajtja a `callbackfn` functiont.
 
 ```javascript
 [10, 20, 30].forEach(console.log);
 ```
 
-### [.push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+### [.push(...items)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+A tömb végéhez hozzáfűzi a megadott paramétereket.
 
 ```javascript
 [10, 20, 30].push(40, 50); // [10, 20, 30, 40, 50]
 ```
 
-### [.unshift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+### [.unshift(...items)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+A tömb elejéhez hozzáfűzi a megadott paramétereket.
 
 ```javascript
 [10, 20, 30].unshift(0, 5); // [0, 5, 10, 20, 30]
 ```
 
-### [.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+### [.concat(...items)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+A tömb végéhez hozzáfűzi a paraméterként megadott tömb(ök) elemeit.
 
 ```javascript
 [10, 20, 30].concat([40, 50]); // [10, 20, 30, 40, 50]
 ```
 
 ### [.pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+Kiveszi a tömb utolsó elemét.
 
 ```javascript
 [10, 20, 30].pop(); // 30
 ```
 
 ### [.shift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+Kiveszi a tömb első elemét.
 
 ```javascript
 [10, 20, 30].shift(); // 10
 ```
 
 ### [.reverse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+Megfordítja a tömb elemeinek sorrendjét.
 
 ```javascript
 [10, 20, 30].reverse(); // [30, 20, 10]
 ```
 
-### [.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+### [.join(separator)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+Stringgé fűzi össze a tömb elemeit a `separator` stringgel.
 
 ```javascript
 [10, 20, 30].join(' + '); // '10 + 20 + 30'
 ```
 
-### [.includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+### [.includes(searchElement)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+`true` értékkel tér vissza, ha a tömb tartalmazza a `searchElement` értékét.
 
 ```javascript
 [10, 20, 30].includes(20); // true
 [10, 20, 30].includes(25); // false
 ```
 
-### [.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+### [.some(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+`true` értékkel tér vissza, ha a tömb valamely elemére a `predicate` function `true` értékkel tér vissza.
 
 ```javascript
 [10, 20, 30].some(number => number === 20); // true
 [10, 20, 30].some(number => number === 25); // false
 ```
 
-### [.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+### [.every(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+`true` értékkel tér vissza, ha a tömb minden elemére a `predicate` function `true` értékkel tér vissza.
 
 ```javascript
 [10, 20, 30].every(number => number === 20); // false
 [10, 20, 30].every(number => number > 5); // true
 ```
 
-### [.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+### [.find(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+Visszatér az első olyan elemmel, amelyre a `predicate` function `true` értékkel tér vissza. Ha nincs ilyen, akkor `null` értékkel tér vissza.
 
 ```javascript
 [10, 20, 30].find(number => number > 25); // 30
 ```
 
-### [.findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+### [.findIndex(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+Visszatér az első olyan elem indexével, amelyre a `predicate` function `true` értékkel tér vissza. Ha nincs ilyen, akkor `-1`-gyel tér vissza.
 
 ```javascript
 [10, 20, 30].findIndex(number => number > 25); // 2
 ```
 
-### [.indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+### [.indexOf(searchElement)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+Visszatér az első olyan elemmel indexével, amely megegyezik a `searchElement` értékével. Ha nincs ilyen, akkor `-1`-gyel tér vissza.
 
 ```javascript
 [10, 20, 30].indexOf(20); // 1
 [10, 20, 30].indexOf(25); // -1
 ```
 
-### [.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+### [.filter(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+Egy új tömbbel tér vissza, amelyben csak azok az elemek vannak, amelyekre a `predicate` function `true` értékkel tér vissza.
 
 ```javascript
 [10, 20, 30].filter(number => number > 15); // [20, 30]
 ```
 
-### [.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+### [.map(callbackFn)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+Egy új tömbbel tér vissza, amelyben a `callbackFn` által átalakított elemek lesznek.
 
 ```javascript
 [10, 20, 30].map(number => number + 100); // [110, 120, 130]
 ```
 
-### [.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+### [.splice(start, deleteCount, ...items)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+A `start` indextől kezdve kitörli a következő `deleteCount` darab elemet a tömbből, és beszúrja az `...items` elemeket a tömbbe.
 
 ```javascript
 [10, 20, 30, 40, 50].splice(1, 2, 'húsz', 'harminc'); // [10, 'húsz', 'harminc', 40, 50]
 ```
 
-### [.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+### [.sort(compareFn)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+A `compareFn` alapján sorbarendezi a tömbböt. A `compareFn` visszatérési értéke
+- 0, ha a két elem megegyezik megegyezik,
+- negatív szám, ha sorrend szerint az első elem előrébb van, mint a második,
+- pozitív szám, ha sorrend szerint az első elem hátrébb van, mint a második.
 
 ```javascript
 [35, 27, 1, 83, 42].sort((a, b) => a - b); // [1, 27, 35, 42, 83]
 ```
 
-### [.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+### [.reduce(callbackFn, initialValue?)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+Az összes elemet felhasználva létrehoz egy új értéket. Az `initialValue` lesz a kezdő érték.
 
 ```javascript
-[10, 20, 30].reduce((sum, number) => sum + number); // 60
+[10, 20, 30].reduce((sum, number) => sum + number, 0); // 60
 ```
