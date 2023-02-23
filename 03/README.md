@@ -42,7 +42,7 @@ Eltávolítja a szóközöket a string elejéről és végéről.
 '   Hello world!   '.trim(); // Hello world!
 ```
 
-### [.localeCompare()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
+### [.localeCompare(that)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
 Összehasonlítja a két stringet. Az eredmény
 - 0, ha a két string megegyezik,
 - negatív szám, ha a string ábécé szerint a paraméter string előtt van,
@@ -52,50 +52,50 @@ Eltávolítja a szóközöket a string elejéről és végéről.
 'ALMA'.localeCompare('KORTE'); // negatív
 ```
 
-### [.includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
-`true` lesz a visszatérési érték, ha a paraméter string megtalálható a stringben.
+### [.includes(searchString)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+`true` lesz a visszatérési érték, ha a `searchString` megtalálható a stringben.
 
 ```javascript
 'ALMA'.includes('A'); // true
 ```
 
-### [.endsWith()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
-`true` lesz a visszatérési érték, ha a paraméter stringre végződik a string.
+### [.endsWith(searchString)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+`true` lesz a visszatérési érték, ha a `searchString`-re végződik a string.
 
 ```javascript
 'ALMA'.endsWith('A'); // true
 ```
 
-### [.startsWith()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
-`true` lesz a visszatérési érték, ha a paraméter stringgel kezdődik a string.
+### [.startsWith(searchString)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
+`true` lesz a visszatérési érték, ha a `searchString`-gel kezdődik a string.
 
 ```javascript
 'ALMA'.startsWith('A'); // true
 ```
 
-### [.indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
-Megadja, hogy hányadik indexen helyezkedik el a keresett string.
+### [.indexOf(searchString)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
+Megadja, hogy hányadik indexen helyezkedik el a `searchString`.
 
 ```javascript
 'ALMA'.indexOf('MA'); // 2
 ```
 
-### [.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-Az első paraméterként megadott string első előfordulását lecseréli a második paraméterként megadott stringre.
+### [.replace(searchValue, replaceValue)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+Az `searchValue` első előfordulását lecseréli a `replaceValue`-ra.
 
 ```javascript
 'ALMA'.replace('AL', 'KAR'); // KARMA
 ```
 
-### [.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-Visszaadja a két index közötti stringet.
+### [.substring(start, end?)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+Visszaadja a két index közötti stringet. Ha az `end` nincs megadva, akkor a string végéig vágja ki a stringet.
 
 ```javascript
 'ALMA'.substring(1, 3); // LM
 ```
 
-### [.split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-A paraméterként megadott string alapján feldarabolja a stringet.
+### [.split(separator)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+A `separator` alapján feldarabolja a stringet.
 
 ```javascript
 'ALMA;KORTE;SZILVA'.split(';'); // ['ALMA', 'KORTE', 'SZILVA']
