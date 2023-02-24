@@ -1,6 +1,26 @@
 # 2. Óra
 
-## [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) utasítás
+## [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+Az `if` utasítás célja, hogy bizonyos utasításokat csak akkor futtassunk meg, ha egy logikai kifejezés értéke `true`. Egyfajta kód elágaztatás. Az `else` ágat
+nem kötelező megadni. Az itt található utasítások csak akkor futnak meg, ha a logikai kifejezés értéke `false`.
+
+### Szintaxis
+
+```javascript
+if (/* logikai kifejezés */) {
+    // utasítások
+}
+```
+
+```javascript
+if (/* logikai kifejezés */) {
+    // utasítások
+} else {
+    // utasítások
+}
+```
+
+### Példa
 
 ```javascript
 if (number % 2 === 0) {
@@ -10,7 +30,7 @@ if (number % 2 === 0) {
 }
 ```
 
-## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) utasítás
+## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 
 ```javascript
 switch (fruit) {
@@ -25,7 +45,7 @@ switch (fruit) {
 }
 ```
 
-## [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) utasítás
+## [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
 
 ```javascript
 for (let i = 0; i < array.length; i++) {
@@ -33,7 +53,7 @@ for (let i = 0; i < array.length; i++) {
 }
 ```
 
-## [while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while) utasítás
+## [while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
 
 ```javascript
 let number = 0;
@@ -42,7 +62,7 @@ while (number < 10) {
 }
 ```
 
-## [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while) utasítás
+## [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
 
 ```javascript
 let number = 0;
@@ -51,7 +71,7 @@ do {
 } while (number < 10);
 ```
 
-## [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break) utasítás
+## [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
 
 ```javascript
 let number = 0;
@@ -63,7 +83,7 @@ while (true) {
 }
 ```
 
-## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue) utasítás
+## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue)
 
 ```javascript
 let number = 0;
