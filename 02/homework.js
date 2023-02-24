@@ -136,7 +136,7 @@ for (let i = 0; i < matrix.length; i++) {
     }
 }
 
-// Írj kód részletet, amelyben létrehozol egy üres tömböt! Ebbe addig teszel boolean értékekt, ameddig 10 elem lesz a tömbben!
+// Írj kód részletet, amelyben létrehozol egy üres tömböt! Ebbe addig teszel boolean értékeket, ameddig 10 elem lesz a tömbben!
 let array = [];
 while (array.length < 10) {
     array.push(true);

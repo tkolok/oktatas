@@ -113,4 +113,4 @@ while (number < 10) {
 1. Írj kód részletet, amelyben kiiratod létrehozol 2 darab 5 elemű szám tömböt, majd létrehozol egy üres tömböt! Az üres tömbbe a másik 2 tömb azonos indexű
    elemeit összeadod!
 1. Írj kód részletet, amelyben létrehozol egy 3 elemű tömböt, amelynek minden eleme egy 3 elemű szám tömb! Irasd ki az összes elemét!
-1. Írj kód részletet, amelyben létrehozol egy üres tömböt! Ebbe addig teszel boolean értékekt, ameddig 10 elem lesz a tömbben!
+1. Írj kód részletet, amelyben létrehozol egy üres tömböt! Ebbe addig teszel boolean értékeket, ameddig 10 elem lesz a tömbben!
