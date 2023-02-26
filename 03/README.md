@@ -274,3 +274,15 @@ Az összes elemet felhasználva létrehoz egy új értéket. Az `initialValue` l
 ```javascript
 [10, 20, 30].reduce((sum, number) => sum + number, 0); // 60
 ```
+
+## Házi feladat
+
+1. Írj functiont, amely 3 paramétert vár! Az első paraméter lehet `'+'`, `'-'`, `'*'`, `'/'`. Az első paramétertől függően összeadja, kivonja, szorozza, osztja
+   a maradék 2 paramétert.
+2. Írj functiont, amely paraméterként vár egy számot, és ennyiszer írja ki a `'*'` karaktert!
+3. Írj functiont, amely paraméterként vár egy számot és egy stringet! Írjon ki annyi sort, amennyi a szám, és minden sorban annyiszor szerepeljen a string,
+   amennyi a szám!
+4. Írj functiont, amely paraméterként nem meghatározott számú számot vár, majd összeadja őket!
+5. Írj functiont, amely paraméterként nem meghatározott számú számot vár, majd felváltva összeadja, kivonja őket! (p1 + p2 - p3 + p4 - p5 + ...)
+6. Írj functiont, amely paraméterként 3 stringet vár, majd visszatér egy objecttel, amelybe ezeket a paramétereket tároljuk, mint firstName, lastName, address!
+7. Írj functiont, amely paraméterként vár egy számot, és nem meghatározott számú további paramétereket, majd kiírja ezek közül a szám indexű paramétert!
