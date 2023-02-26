@@ -3,21 +3,53 @@
 ## [Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) (függvények)
 A functionök (függvények) nem mások, mint újrafelhasználható paraméterezhető utasítás blokkok.
 
+### Function létrehozási példák
+
 ```javascript
 function sum1(a, b) {
     return a + b;
 }
 
-let sum2 = (a, b) => {
+let sum2 = (a, b) => { // function, mint változó
     return a + b;
 };
 
 let sum3 = (a, b) => a + b;
 ```
 
-## return
-A `return` kulcsszó után a function futása véget ér, és a function visszatér a `return` után álló érétkkel. Ha ez az érték nincs definiálva, vagy a function nem
-fut bele `return` utasításba, akkor `undefined` értékkel tér vissza a function. 
+### Function meghívási példák
+
+```javascript
+sum1(1, 2);
+sum2(3, sum3(4, 5));
+```
+
+### [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
+A `return` kulcsszó után a function futása véget ér, és a function visszatér a `return` után álló értékkel. Ha ez az érték nincs definiálva, vagy a function nem
+fut bele `return` utasításba, akkor `undefined` értékkel tér vissza a function.
+
+### Paraméterek
+Egy functionnek akárhány paramétere lehet. Ezeket úgy kell elképzelni, mint egyszerű blokk szintű változókat, amelyek csak a function törzsén belül léteznek.
+JavaScriptben lehetőség van [default értéket](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) megadni egy
+paraméternek. Ha a function meghívásakor a paramétert értéke `undefined`, akkor `undefined` helyett a default értéket fogja a paraméter tartalmazni. Ezen kívül
+lehetőség van [rest paraméterek](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) megadására is, mely célja, hogy
+nem meghataározott számú paramétert is át tudjunk adni egy functionnek. A rest paraméter típusa tömb.
+
+```javascript
+function multiply(a, b = 1) { // b változó default értéke 1
+    return a * b;
+}
+
+mutliply(5); // 5
+
+function list(...params) { // rest paraméter
+    for (let i = 0; i < params.length; i++) {
+        console.log(params[i]);
+    }
+}
+
+list(5, 'alma', null, true, {name: 'Jóska'});
+```
 
 ## [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) functions
 
