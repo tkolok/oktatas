@@ -31,9 +31,9 @@ fut bele `return` utasításba, akkor `undefined` értékkel tér vissza a funct
 ### Paraméterek
 Egy functionnek akárhány paramétere lehet. Ezeket úgy kell elképzelni, mint egyszerű blokk szintű változókat, amelyek csak a function törzsén belül léteznek.
 JavaScriptben lehetőség van [default értéket](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) megadni egy
-paraméternek. Ha a function meghívásakor a paramétert értéke `undefined`, akkor `undefined` helyett a default értéket fogja a paraméter tartalmazni. Ezen kívül
-lehetőség van [rest paraméterek](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) megadására is, mely célja, hogy
-nem meghataározott számú paramétert is át tudjunk adni egy functionnek. A rest paraméter típusa tömb.
+paraméternek. Ha a function meghívásakor a paraméter értéke `undefined`, akkor `undefined` helyett a default értéket fogja a paraméter tartalmazni. Ezen kívül
+lehetőség van [rest paraméter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) megadására is, mely célja, hogy nem
+meghatározott számú paramétert is át tudjunk adni egy functionnek. A rest paraméter típusa tömb.
 
 ```javascript
 function multiply(a, b = 1) { // b változó default értéke 1
@@ -216,7 +216,7 @@ Stringgé fűzi össze a tömb elemeit a `separator` stringgel.
 ```
 
 ### [.find(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
-Visszatér az első olyan elemmel, amelyre a `predicate` function `true` értékkel tér vissza. Ha nincs ilyen, akkor `null` értékkel tér vissza.
+Visszatér az első olyan elemmel, amelyre a `predicate` function `true` értékkel tér vissza. Ha nincs ilyen, akkor `undefined` értékkel tér vissza.
 
 ```javascript
 [10, 20, 30].find(number => number > 25); // 30
