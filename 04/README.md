@@ -74,7 +74,7 @@ A `constructor` egy speciális metódus, amely segítségével inicializálhatju
 
 ### [Getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
 
-A `get` segítégével 
+A `get` segítségével 
 
 #### Létrehozás szintaxisa
 
@@ -86,7 +86,7 @@ get <adattag neve>() {
 
 ### [Setter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set)
 
-A `set` segítégével
+A `set` segítségével
 
 #### Létrehozás szintaxisa
 
