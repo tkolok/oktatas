@@ -1,23 +1,50 @@
 # 3. Óra
 
 ## [Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) (függvények)
+
 A functionök (függvények) nem mások, mint újrafelhasználható paraméterezhető utasítás blokkok.
 
-### Function létrehozási példák
+### Function létrehozás
+
+#### Szintaxis
+
+```
+function <function neve>(<paraméter lista>) {
+   <function törzse>
+}
+```
+
+vagy
+
+```
+let <function neve> = (<paraméter lista>) => { // ebben az esetben a function egy változó
+   <function törzse>
+}
+```
+
+#### Példák
 
 ```javascript
 function sum1(a, b) {
     return a + b;
 }
 
-let sum2 = (a, b) => { // function, mint változó
+let sum2 = (a, b) => {
     return a + b;
 };
 
 let sum3 = (a, b) => a + b;
 ```
 
-### Function meghívási példák
+### Function meghívása
+
+#### Szintaxis
+
+```
+<function neve>(<paraméter lista>)
+```
+
+#### Példák
 
 ```javascript
 sum1(1, 2);
@@ -25,15 +52,26 @@ sum2(3, sum3(4, 5));
 ```
 
 ### [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
+
 A `return` kulcsszó után a function futása véget ér, és a function visszatér a `return` után álló értékkel. Ha ez az érték nincs definiálva, vagy a function nem
 fut bele `return` utasításba, akkor `undefined` értékkel tér vissza a function.
 
 ### Paraméterek
-Egy functionnek akárhány paramétere lehet. Ezeket úgy kell elképzelni, mint egyszerű blokk szintű változókat, amelyek csak a function törzsén belül léteznek.
-JavaScriptben lehetőség van [default értéket](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) megadni egy
-paraméternek. Ha a function meghívásakor a paraméter értéke `undefined`, akkor `undefined` helyett a default értéket fogja a paraméter tartalmazni. Ezen kívül
-lehetőség van [rest paraméter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) megadására is, mely célja, hogy nem
-meghatározott számú paramétert is át tudjunk adni egy functionnek. A rest paraméter típusa tömb.
+
+Egy functionnek akárhány paramétere lehet, melyeket vesszővel választunk el. Ezeket úgy kell elképzelni, mint egyszerű blokk szintű változókat, amelyek csak a
+function törzsén belül léteznek. JavaScriptben lehetőség van
+[default értéket](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) megadni egy paraméternek. Ha a function
+meghívásakor a paraméter értéke `undefined`, akkor `undefined` helyett a default értéket fogja a paraméter tartalmazni. Ezen kívül lehetőség van
+[rest paraméter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) megadására is, mely célja, hogy nem meghatározott
+számú paramétert is át tudjunk adni egy functionnek. A rest paraméter típusa tömb.
+
+A paraméter típusától függően kétféle módon adhatjuk át őket a functionnek. Érték szerint az egyszerű típusokat (string, boolean, number, stb.) és refencia
+szerint az összetett típusokat (object, array). Ezeket úgy kell elképzelni, mintha egy fájlt szeretnénk megosztani. Az érték szerinti átadás esetében ez olyan,
+mintha a fájlt átküldenénk a másik fél számára, így mind a kettőnk számítógépén ott lesz a fájl. Ha az egyikünk módosítja a saját példányát, az nem lesz
+kihatással a másik példányára. A referencia szerinti átadás esetében úgy kell elképzelni ezt, minta a felhőben osztanánk meg egymással a fájlt. Egyetlen egy
+példány létezik a fájlból, és ha az egyikünk módosítja, akkor a másik is látni fogja a módosításokat. Így, ha egy paraméterként kapott stringet módosítunk a
+functionön belül, akkor az nem lesz kihatással az eredeti stringre, de ha egy objektum paramétert módosítunk, akkor az eredeti objektum is módosulni fog (hiszen
+a két objektum ugyanaz).
 
 ```javascript
 function multiply(a, b = 1) { // b változó default értéke 1
@@ -54,6 +92,7 @@ list(5, 'alma', null, true, {name: 'Jóska'});
 ## [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) functions
 
 ### [.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+
 Kisbetűssé alakítja a stringet.
 
 ```javascript
@@ -61,6 +100,7 @@ Kisbetűssé alakítja a stringet.
 ```
 
 ### [.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+
 Nagybetűssé alakítja a stringet.
 
 ```javascript
@@ -68,6 +108,7 @@ Nagybetűssé alakítja a stringet.
 ```
 
 ### [.trim()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
+
 Eltávolítja a szóközöket a string elejéről és végéről.
 
 ```javascript
@@ -75,7 +116,9 @@ Eltávolítja a szóközöket a string elejéről és végéről.
 ```
 
 ### [.localeCompare(that)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
+
 Összehasonlítja a két stringet. Az eredmény
+
 - 0, ha a két string megegyezik,
 - negatív szám, ha a string ábécé szerint a paraméter string előtt van,
 - pozitív szám, ha a string ábécé szerint a paraméter string után van.
@@ -85,6 +128,7 @@ Eltávolítja a szóközöket a string elejéről és végéről.
 ```
 
 ### [.includes(searchString)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes)
+
 `true` lesz a visszatérési érték, ha a `searchString` megtalálható a stringben.
 
 ```javascript
@@ -92,6 +136,7 @@ Eltávolítja a szóközöket a string elejéről és végéről.
 ```
 
 ### [.endsWith(searchString)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+
 `true` lesz a visszatérési érték, ha a `searchString`-re végződik a string.
 
 ```javascript
@@ -99,6 +144,7 @@ Eltávolítja a szóközöket a string elejéről és végéről.
 ```
 
 ### [.startsWith(searchString)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith)
+
 `true` lesz a visszatérési érték, ha a `searchString`-gel kezdődik a string.
 
 ```javascript
@@ -106,6 +152,7 @@ Eltávolítja a szóközöket a string elejéről és végéről.
 ```
 
 ### [.indexOf(searchString)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
+
 Megadja, hogy hányadik indexen helyezkedik el a `searchString`.
 
 ```javascript
@@ -113,6 +160,7 @@ Megadja, hogy hányadik indexen helyezkedik el a `searchString`.
 ```
 
 ### [.replace(searchValue, replaceValue)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+
 Az `searchValue` első előfordulását lecseréli a `replaceValue`-ra.
 
 ```javascript
@@ -120,6 +168,7 @@ Az `searchValue` első előfordulását lecseréli a `replaceValue`-ra.
 ```
 
 ### [.substring(start, end?)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+
 Visszaadja a két index közötti stringet. Ha az `end` nincs megadva, akkor a string végéig vágja ki a stringet.
 
 ```javascript
@@ -127,6 +176,7 @@ Visszaadja a két index közötti stringet. Ha az `end` nincs megadva, akkor a s
 ```
 
 ### [.split(separator)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+
 A `separator` alapján feldarabolja a stringet.
 
 ```javascript
@@ -136,6 +186,7 @@ A `separator` alapján feldarabolja a stringet.
 ## [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) functions
 
 ### [.forEach(callbackfn)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+
 A tömb minden elemére végrehajtja a `callbackfn` functiont.
 
 ```javascript
@@ -143,6 +194,7 @@ A tömb minden elemére végrehajtja a `callbackfn` functiont.
 ```
 
 ### [.push(...items)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+
 A tömb végéhez hozzáfűzi a megadott paramétereket.
 
 ```javascript
@@ -150,6 +202,7 @@ A tömb végéhez hozzáfűzi a megadott paramétereket.
 ```
 
 ### [.unshift(...items)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+
 A tömb elejéhez hozzáfűzi a megadott paramétereket.
 
 ```javascript
@@ -157,6 +210,7 @@ A tömb elejéhez hozzáfűzi a megadott paramétereket.
 ```
 
 ### [.concat(...items)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+
 A tömb végéhez hozzáfűzi a paraméterként megadott tömb(ök) elemeit.
 
 ```javascript
@@ -164,6 +218,7 @@ A tömb végéhez hozzáfűzi a paraméterként megadott tömb(ök) elemeit.
 ```
 
 ### [.pop()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+
 Kiveszi a tömb utolsó elemét.
 
 ```javascript
@@ -171,6 +226,7 @@ Kiveszi a tömb utolsó elemét.
 ```
 
 ### [.shift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+
 Kiveszi a tömb első elemét.
 
 ```javascript
@@ -178,6 +234,7 @@ Kiveszi a tömb első elemét.
 ```
 
 ### [.reverse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+
 Megfordítja a tömb elemeinek sorrendjét.
 
 ```javascript
@@ -185,6 +242,7 @@ Megfordítja a tömb elemeinek sorrendjét.
 ```
 
 ### [.join(separator)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+
 Stringgé fűzi össze a tömb elemeit a `separator` stringgel.
 
 ```javascript
@@ -192,6 +250,7 @@ Stringgé fűzi össze a tömb elemeit a `separator` stringgel.
 ```
 
 ### [.includes(searchElement)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+
 `true` értékkel tér vissza, ha a tömb tartalmazza a `searchElement` értékét.
 
 ```javascript
@@ -200,6 +259,7 @@ Stringgé fűzi össze a tömb elemeit a `separator` stringgel.
 ```
 
 ### [.some(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+
 `true` értékkel tér vissza, ha a tömb valamely elemére a `predicate` function `true` értékkel tér vissza.
 
 ```javascript
@@ -208,6 +268,7 @@ Stringgé fűzi össze a tömb elemeit a `separator` stringgel.
 ```
 
 ### [.every(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+
 `true` értékkel tér vissza, ha a tömb minden elemére a `predicate` function `true` értékkel tér vissza.
 
 ```javascript
@@ -216,6 +277,7 @@ Stringgé fűzi össze a tömb elemeit a `separator` stringgel.
 ```
 
 ### [.find(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+
 Visszatér az első olyan elemmel, amelyre a `predicate` function `true` értékkel tér vissza. Ha nincs ilyen, akkor `undefined` értékkel tér vissza.
 
 ```javascript
@@ -223,6 +285,7 @@ Visszatér az első olyan elemmel, amelyre a `predicate` function `true` érték
 ```
 
 ### [.findIndex(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+
 Visszatér az első olyan elem indexével, amelyre a `predicate` function `true` értékkel tér vissza. Ha nincs ilyen, akkor `-1`-gyel tér vissza.
 
 ```javascript
@@ -230,6 +293,7 @@ Visszatér az első olyan elem indexével, amelyre a `predicate` function `true`
 ```
 
 ### [.indexOf(searchElement)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+
 Visszatér az első olyan elemmel indexével, amely megegyezik a `searchElement` értékével. Ha nincs ilyen, akkor `-1`-gyel tér vissza.
 
 ```javascript
@@ -238,6 +302,7 @@ Visszatér az első olyan elemmel indexével, amely megegyezik a `searchElement`
 ```
 
 ### [.filter(predicate)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+
 Egy új tömbbel tér vissza, amelyben csak azok az elemek vannak, amelyekre a `predicate` function `true` értékkel tér vissza.
 
 ```javascript
@@ -245,6 +310,7 @@ Egy új tömbbel tér vissza, amelyben csak azok az elemek vannak, amelyekre a `
 ```
 
 ### [.map(callbackFn)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
 Egy új tömbbel tér vissza, amelyben a `callbackFn` által átalakított elemek lesznek.
 
 ```javascript
@@ -252,6 +318,7 @@ Egy új tömbbel tér vissza, amelyben a `callbackFn` által átalakított eleme
 ```
 
 ### [.splice(start, deleteCount, ...items)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
 A `start` indextől kezdve kitörli a következő `deleteCount` darab elemet a tömbből, és beszúrja az `...items` elemeket a tömbbe.
 
 ```javascript
@@ -259,7 +326,9 @@ A `start` indextől kezdve kitörli a következő `deleteCount` darab elemet a t
 ```
 
 ### [.sort(compareFn)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
 A `compareFn` alapján sorbarendezi a tömbböt. A `compareFn` visszatérési értéke
+
 - 0, ha a két elem megegyezik megegyezik,
 - negatív szám, ha sorrend szerint az első elem előrébb van, mint a második,
 - pozitív szám, ha sorrend szerint az első elem hátrébb van, mint a második.
@@ -269,6 +338,7 @@ A `compareFn` alapján sorbarendezi a tömbböt. A `compareFn` visszatérési é
 ```
 
 ### [.reduce(callbackFn, initialValue?)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+
 Az összes elemet felhasználva létrehoz egy új értéket. Az `initialValue` lesz a kezdő érték.
 
 ```javascript
