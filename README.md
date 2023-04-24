@@ -1,4 +1,6 @@
-# JavaScript kezdőknek
+> Megjegyzés: Nagyon kezdeti állapotban van a repository. 
+
+# JavaScript és React kezdőknek
 Ezt a repositoryt azoknak ajánlom, akik szeretnének elkezdeni programozni. Itt a programozás alapjait mutatom meg JavaScript programozási nyelv segítségével.
 Hogy miért pont JavaScript? Mert semmit nem kell telepíteni a használatához, bármely böngészőt lehet hozzá használni (akár offline is).
 
