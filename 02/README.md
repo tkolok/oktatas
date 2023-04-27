@@ -6,14 +6,14 @@ nem kötelező megadni. Az itt található utasítások csak akkor futnak meg, h
 
 ### Szintaxis
 
-```javascript
-if (/* logikai kifejezés */) {
+```
+if (<logikai kifejezés>) {
     // utasítások
 }
 ```
 
-```javascript
-if (/* logikai kifejezés */) {
+```
+if (<logikai kifejezés>) {
     // utasítások
 } else {
     // utasítások
