@@ -1,6 +1,6 @@
 # 2. Óra
 
-## [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+## [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) -
 Az `if` utasítás célja, hogy bizonyos utasításokat csak akkor futtassunk meg, ha egy logikai kifejezés értéke `true`. Egyfajta kód elágaztatás. Az `else` ágat
 nem kötelező megadni. Az itt található utasítások csak akkor futnak meg, ha a logikai kifejezés értéke `false`.
 
@@ -30,22 +30,50 @@ if (number % 2 === 0) {
 }
 ```
 
-## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) -
+
+### Szintaxis
+
+```
+switch (<kifejezés>) {
+    case <érték 1>:
+        <utasítások>
+        break;
+    case <érték 2>:
+        <utasítások>
+        break;
+    ...
+    default:
+        <utasítások>
+}
+```
+
+### Példa
 
 ```javascript
 switch (fruit) {
     case 'alma':
-        // ...
+        console.log('Az alma egy gyümölcs');
         break;
     case 'körte':
-        // ...
+        console.log('A körte latin neve pyrus');
         break;
     default:
-        // ...
+        console.log('Szívesen csinálnék egy gyümölcssalátát!');
 }
 ```
 
-## [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+## [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) -
+
+### Szintaxis
+
+```
+for (<változók deklarálása>; <feltételek>; <ciklusiteráció után megfutó utasítások>) {
+    <utasítások>
+}
+```
+
+### Példa
 
 ```javascript
 for (let i = 0; i < array.length; i++) {
@@ -53,7 +81,17 @@ for (let i = 0; i < array.length; i++) {
 }
 ```
 
-## [while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+## [while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while) -
+
+### Szintaxis
+
+```
+while (<feltételek>) {
+    <utasítások>
+}
+```
+
+### Példa
 
 ```javascript
 let number = 0;
@@ -62,7 +100,17 @@ while (number < 10) {
 }
 ```
 
-## [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
+## [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while) -
+
+### Szintaxis
+
+```
+do {
+    <utasítások>
+} while (<feltételek>);
+```
+
+### Példa
 
 ```javascript
 let number = 0;
@@ -71,7 +119,7 @@ do {
 } while (number < 10);
 ```
 
-## [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
+## [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break) -
 
 ```javascript
 let number = 0;
@@ -83,7 +131,7 @@ while (true) {
 }
 ```
 
-## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue)
+## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue) -
 
 ```javascript
 let number = 0;
