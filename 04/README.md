@@ -125,23 +125,27 @@ set <adattag neve>(arg) {
 
 ### [static](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static) -
 
-### instanceof -
+### [instanceof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof) -
 
 ### Inheritance (öröklődés) -
 
-### super -
+### [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)
 
-### override
+A `super` mindig a szülőosztályra hivatkozik. Amennyiben a gyermekosztály rendelkezik constructorral, úgy a `super(...)` metódust mindig meg kell hívni. Ez a
+szülőosztály constructorát fogja meghívni. Ezt az egy esetet leszámítva a segítségével mindig a szülőosztály egy adattagjára vagy metódusára tudunk hivatkozni.
+Például: `super.name` vagy `super.toString()`.
+
+### override -
 
 ## Házi feladat
 
 - Hozz létre egy `Person` nevű osztályt, amelynek van név, kor és súly adattagja.
 - A konstruktornak 3 paramétert kell megadni: név, kor, nem. Ha 15 évesnél fiatalabb, akkor a súly a kor 3-szorosa legyen. 15-től a nők súlya 55 legyen, a
-férfiaké 80.
+  férfiaké 80.
 - Legyen egy `birthday` metódus, amely növeli az adott ember korát eggyel.
 - Hozz létre egy `Food` nevű osztályt, amelynek van név és kalória adattagja. Ezeket konsruktoron keresztül lehessen megadni.
 - Hozz létre egy `eat` nevű metódust, amely paraméterként egy mennyiséget vár, és visszatér a kalória és a mennyiség szorzatával.
 - Hozz létre egy `Fruit` nevű osztályt, amelyet a `Food` osztályból származtatsz, és az `eat` metódus 25%-kal kisebb értékkel tér vissza.
 - Hozz létre egy `Sweetness` nevű osztályt, amelyet a `Food` osztályból származtatsz, és az `eat` metódus 50%-kal nagyobb értékkel tér vissza.
 - A `Person` osztályon belül hozz létre egy `eat` metódust, amelynek a paraméterei egy `Food` és egy mennyiség. Az adott személy súlya a megevett étel
-mennyiségével fog nőni.
+  mennyiségével fog nőni.
