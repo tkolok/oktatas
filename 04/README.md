@@ -20,7 +20,7 @@ class <osztály neve> {
 
 #### Példa
 
-Az itt található példa részeit lentebb kifejtem.
+Az itt található példa sorait lentebb részletezem.
 
 ```javascript
 class Rectangle {
@@ -37,6 +37,10 @@ class Rectangle {
     static getInstance(index) {
         return Rectangle.instancies[index];
     }
+
+    toSting() {
+        return `{height: ${this._height}, width: ${this._width}}`;
+    }  
 
     get area() {
         return this._height * this._width;
@@ -66,41 +70,52 @@ class Rectangle {
 }
 ```
 
-### Új példány létrehozás
+### [fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) (mező, adattag)
 
-Amikor új példányt hozunk létre egy osztályból, akkor egy olyan objektumot hozunk létre, amely rendelkezik az osztályon belül meghatározott adattagokkal,
-metódusokkal.
+Az osztályon belül az attribútumokat fieldnek nevezzük. Az adattagok elé nem kell `const`, `let` és `var` kulcsszót tenni.
 
 #### Szintaxis
 
 ```
-new <osztály neve>(<paraméterek>);
+class {
+    <adattag neve>
+}
 ```
 
-#### Példa
+### [Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions) (metódusok)
 
-```javascript
-let square = new Rectangle(5, 5);
+Az osztályon belül a függvényeket methodnak (metódusnak) nevezzük. A metódusok elé nem kell `function` kulcsszót tenni.
+
+#### Szintaxis
+
+```
+class {
+    <metódus neve>(<paraméter lista>) {
+        <metódus törzse>
+    }
+}
+```
+
+### [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
+
+A `constructor` egy speciális metódus, amely segítségével inicializálhatjuk (kezdő értéket adhatunk) egy új példány adattagjait a létrehozása pillanatában.  
+Ez az a pillanat, amikor megadhatjuk, hogy milyen hozzávalókból szeretnénk a süteményt készíteni. A sütőforma meg fogja adni, hogy hogyan nézzen ki a sütemény,
+de az ízét, állagát, színét a hozzávalók fogják meghatározni.
+
+#### Szintaxis
+
+```
+class {
+    constructor(<paraméter lista>) {
+        <metódus törzse>
+    }
+}
 ```
 
 ### [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 A `this` kulcsszóval lehet hivatkozni az adott példányra. Ha több példányt is létrehoztunk egy adott osztályból, akkor a `this` kulcsszó mindig arra a példányra
 fog mutatni, amelynek meghívtuk a metódusát, lekérdeztük az adattagját, stb..
-
-### [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
-
-A `constructor` egy speciális metódus, amely segítségével inicializálhatjuk egy új példány adattagjait a létrehozása pillanatában.
-
-### [Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions) (metódusok) -
-
-#### Szintaxis
-
-```
-<metódus neve>(<paraméter lista>) {
-    <metódus törzse>
-}
-```
 
 ### [Getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
 
@@ -113,8 +128,10 @@ aktuális értékét, és nem szükséges eltárolni azt. Továbbá, ha módosul
 #### Szintaxis
 
 ```
-get <adattag neve>() {
-    <metódus törzse>
+class {
+    get <adattag neve>() {
+        <metódus törzse>
+    }
 }
 ```
 
@@ -127,8 +144,10 @@ Például, ha szeretnénk kiíratni, hogy miről mire módosult az adattag, akko
 #### Szintaxis
 
 ```
-set <adattag neve>(arg) {
-    <metódus törzse>
+class {
+    set <adattag neve>(arg) {
+        <metódus törzse>
+    }
 }
 ```
 
@@ -145,6 +164,24 @@ szülőosztály constructorát fogja meghívni. Ezt az egy esetet leszámítva a
 Például: `super.name` vagy `super.toString()`.
 
 ### override -
+
+### Új példány létrehozás -
+
+Amikor új példányt hozunk létre egy osztályból, akkor egy olyan objektumot hozunk létre, amely rendelkezik az osztályon belül meghatározott adattagokkal,
+metódusokkal. Ezt a `new` kulcsszóval érhetjük el.  
+Ez az a művelet, amikor a sütőformából süteményt készítünk.
+
+#### Szintaxis
+
+```
+new <osztály neve>(<paraméterek>);
+```
+
+#### Példa
+
+```javascript
+let square = new Rectangle(5, 5);
+```
 
 ## Házi feladat
 
