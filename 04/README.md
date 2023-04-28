@@ -2,8 +2,9 @@
 
 ## [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) (osztályok)
 
-Az osztályok sablonok objektumok létrehozásához. Az osztályból származtatott példányok egységbe foglalják az adatokat és a hozzájuk tartozó műveleteket. A
-létrehozott példányokra úgy kell gondolni, mint egyszerű objektumokra.
+Az osztályok sablonok, amelyekkel azonos tulajdonságú objektumokat hozhatunk létre. Az osztályból származtatott példányok egységbe foglalják az adatokat és a
+hozzájuk tartozó műveleteket. A létrehozott példányokra úgy kell gondolni, mint egyszerű objektumokra.  
+Maguk az osztályok olyanok, mint a sütőformák, amik segítségével azonos formájú süteményeket formázhatunk, de magukban a süteményekben lehet eltérés.
 
 ### Class definiálása
 
@@ -15,16 +16,26 @@ class <osztály neve> {
 }
 ```
 
+> Megjegyzés: a classok neveit _PascalCase_ módon szokás megadni.
+
 #### Példa
+
+Az itt található példa részeit lentebb kifejtem.
 
 ```javascript
 class Rectangle {
+    static instancies = [];
     _height;
     _width;
 
     constructor(width, height) {
         this._height = height;
         this._width = width;
+        Rectangle.instancies.push(this);
+    }
+    
+    static getInstance(index) {
+        return Rectangle.instancies[index];
     }
 
     get area() {
@@ -54,8 +65,6 @@ class Rectangle {
     }
 }
 ```
-
-> Megjegyzés: a classok neveit _PascalCase_ módon szokás megadni.
 
 ### Új példány létrehozás
 
