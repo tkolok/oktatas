@@ -23,56 +23,60 @@ class <osztály neve> {
 Az itt található példa sorait lentebb részletezem.
 
 ```javascript
-class Rectangle {
-    static instancies = [];
-    _height;
-    _width;
+class Pizza {
+    static _pizzas = [];
+    _ingredients;
+    _name;
 
-    constructor(width, height) {
-        this._height = height;
-        this._width = width;
-        Rectangle.instancies.push(this);
+    constructor(name, ...ingredients) {
+        this._ingredients = ingredients;
+        this._name = name;
+        Pizza._pizzas.push(this);
     }
-    
-    static getInstance(index) {
-        return Rectangle.instancies[index];
+
+    static getCheapest() {
+        let cheapest = Pizza._pizzas[0];
+  
+        for (let index = 1; index < Pizza._pizzas.length; index++) {
+            if (Pizza._pizzas[index].price < cheapest.price) {
+                cheapest = Pizza._pizzas[index];
+            }
+        }
+
+        return cheapest;
+    }
+
+    addIngredient(ingredient) {
+        this._ingredients.push(ingredient);
     }
 
     toSting() {
-        return `{height: ${this._height}, width: ${this._width}}`;
-    }  
-
-    get area() {
-        return this._height * this._width;
+        return `A ${this._name} hozzávalói: ${this._ingredients.join(', ')}. Ára: ${this.price} Ft.`;
     }
 
-    get height() {
-        return this._height;
+    get ingredients() {
+        return this._ingredients;
     }
 
-    get perimeter() {
-        return 2 * (this._height + this._width);
+    get name() {
+        return this._name;
     }
 
-    get width() {
-        return this._width;
+    get price() {
+        return 1000 + this._ingredients * 200;
     }
 
-    set height(value) {
-        console.log(`Height changed from ${this._height} to ${value}.`);
-        this._height = value;
-    }
-
-    set width(value) {
-        console.log(`Width changed from ${this._width} to ${value}.`);
-        this._width = value;
+    set name(value) {
+        console.log(`A ${this._name} pizza új neve: ${value}.`);
+        this._name = value;
     }
 }
 ```
 
-### [fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) (mező, adattag)
+### [fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) (mező, adattag) -
 
-Az osztályon belül az attribútumokat fieldnek nevezzük. Az adattagok elé nem kell `const`, `let` és `var` kulcsszót tenni.
+Az osztályon belül az attribútumokat fieldnek nevezzük. Az adattagok elé nem kell `const`, `let` és `var` kulcsszót tenni.  
+A példában a `_pizzas`, az `_ingredients` és a `_name` az adattagok. A `_pizzas` előtti `static` kulcsszót lentebb tárgyaljuk.
 
 #### Szintaxis
 
@@ -82,7 +86,7 @@ class {
 }
 ```
 
-### [Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions) (metódusok)
+### [Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions) (metódusok) -
 
 Az osztályon belül a függvényeket methodnak (metódusnak) nevezzük. A metódusok elé nem kell `function` kulcsszót tenni.
 
