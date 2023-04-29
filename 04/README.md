@@ -4,7 +4,8 @@
 
 Az osztályok sablonok, amelyekkel azonos tulajdonságú objektumokat hozhatunk létre. Az osztályból származtatott példányok egységbe foglalják az adatokat és a
 hozzájuk tartozó műveleteket. A létrehozott példányokra úgy kell gondolni, mint egyszerű objektumokra.  
-Maguk az osztályok olyanok, mint a sütőformák, amik segítségével azonos formájú süteményeket formázhatunk, de magukban a süteményekben lehet eltérés.
+Maguk az osztályok olyanok, mint a csak pizza sütésre használt kemencék, amik segítségével azonos formájú, vastagságú pizzákat készíthetünk, de a pizzák
+feltétei eltérhetnek.
 
 ### Class definiálása
 
@@ -110,8 +111,8 @@ class {
 ### [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
 
 A `constructor` egy speciális metódus, amely segítségével inicializálhatjuk (kezdő értéket adhatunk) egy új példány adattagjait a létrehozása pillanatában.  
-Ez az a pillanat, amikor megadhatjuk, hogy milyen hozzávalókból szeretnénk a süteményt készíteni. A sütőforma meg fogja adni, hogy hogyan nézzen ki a sütemény
-(milyen adattagjai és metódusai vannak), de az ízük, állaguk, színük süteményenként eltérhet (példányonként más-más értékeket tárolnak az adattagok).
+Ez az a pillanat, amikor megadhatjuk, hogy milyen feltéteket teszünk a pizzára. A kemence továbbra is megadja, hogy hogyan nézzen ki a pizza (milyen adattagjai
+és metódusai vannak), de a feltétek pizzánként eltérhetnek (példányonként más-más értékeket tárolnak az adattagok).
 
 #### Szintaxis
 
@@ -130,7 +131,7 @@ fog mutatni, amelynek meghívtuk a metódusát, lekérdeztük az adattagját, st
 Ha a különböző pizzáknál szeretném megtudni, hogy melyiknek mi a neve, akkor a `margheritaPizza` esetében ez "Margherita pizza" lesz, míg a `pepperoniPizza`
 esetében "Tűzokádó pepperonis pizza".
 
-### [Getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
+### [Getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) -
 
 A `get` segítségével amikor egy példány adattagjára hivatkozunk, akkor egy egyszerű érték visszaadás helyett egy metódus kerül meghívásra. Ezt legtöbbször arra
 használjuk, hogy dinamikusan kiszámítsuk a használni kívánt adattagot, vagy olyan adattaghoz biztosítsunk hozzáférést, amely rejtve van.  
@@ -148,7 +149,7 @@ class {
 }
 ```
 
-### [Setter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set)
+### [Setter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set) -
 
 A `set` segítségével amikor egy példány adattagját szeretnénk megváltoztatni, akkor ezt egy metódus híváson keresztül tehetjük meg. Ennek célja, hogy amikor
 módosítani szeretnénk valamit, akkor további logikát adhatunk a módosítás mellé.  
