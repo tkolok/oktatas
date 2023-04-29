@@ -73,7 +73,7 @@ class Pizza {
 }
 ```
 
-### [fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) (mező, adattag)
+### [Fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) (mező, adattag)
 
 Az osztályon belül az attribútumokat fieldnek nevezzük. Céljuk is ugyanaz, az adott objektummal kapcsolatban tárolhatunk itt adatokat. Az adattagok elé nem kell
 `const`, `let` és `var` kulcsszót tenni. Ezekre ugyanúgy kell hivatkozni, mintha egy objektum attribútumára hivatkoznánk (pl.:
@@ -126,7 +126,9 @@ class {
 ### [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 A `this` kulcsszóval lehet hivatkozni az adott példányra. Ha több példányt is létrehoztunk egy adott osztályból, akkor a `this` kulcsszó mindig arra a példányra
-fog mutatni, amelynek meghívtuk a metódusát, lekérdeztük az adattagját, stb..
+fog mutatni, amelynek meghívtuk a metódusát, lekérdeztük az adattagját, stb..  
+Ha a különböző pizzáknál szeretném megtudni, hogy melyiknek mi a neve, akkor a `margheritaPizza` esetében ez "Margherita pizza" lesz, míg a `pepperoniPizza`
+esetében "Tűzokádó pepperonis pizza".
 
 ### [Getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
 
