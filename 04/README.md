@@ -7,21 +7,7 @@ hozzájuk tartozó műveleteket. A létrehozott példányokra úgy kell gondolni
 Maguk az osztályok olyanok, mint a csak pizza sütésre használt kemencék, amik segítségével azonos formájú, vastagságú pizzákat készíthetünk, de a pizzák
 feltétei eltérhetnek.
 
-### Class definiálása
-
-#### Szintaxis
-
-```
-class <osztály neve> {
-    <az osztály törzse> // itt fieldeket (mezők/adattagok) és methodokat (metódusokat) definiálunk
-}
-```
-
-> Megjegyzés: a classok neveit _PascalCase_ módon szokás megadni.
-
-#### Példa
-
-Az itt található példa sorait lentebb részletezem.
+A továbbiakban az itt található kódrészlet sorait fogjuk kielemezni.
 
 ```javascript
 class Pizza {
@@ -77,6 +63,18 @@ const hamPizza = new Pizza('Sonkás', 'paradicsomszósz', 'kukorica', 'sajt', 's
 const margheritaPizza = new Pizza('Margherita', 'paradicsomszósz', 'bazsalikom', 'mozzarella', 'paradicsomkarikák');
 const pepperoniPizza = new Pizza('Tűzokádó pepperonis', 'paradicsomszósz', 'jalapeño', 'pepperoni', 'sonka');
 ```
+
+### Class definiálása -
+
+#### Szintaxis
+
+```
+class <osztály neve> {
+    <az osztály törzse> // itt fieldeket (mezők/adattagok) és methodokat (metódusokat) definiálunk
+}
+```
+
+> Megjegyzés: a classok neveit _PascalCase_ módon szokás megadni.
 
 ### [Fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) (mező, adattag)
 
