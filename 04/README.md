@@ -171,7 +171,7 @@ class {
 
 ### Inheritance (öröklődés) -
 
-### [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)
+### [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) -
 
 A `super` mindig a szülőosztályra hivatkozik. Amennyiben a gyermekosztály rendelkezik constructorral, úgy a `super(...)` metódust mindig meg kell hívni. Ez a
 szülőosztály constructorát fogja meghívni. Ezt az egy esetet leszámítva a segítségével mindig a szülőosztály egy adattagjára vagy metódusára tudunk hivatkozni.
@@ -183,7 +183,7 @@ Például: `super.name` vagy `super.toString()`.
 
 Amikor új példányt hozunk létre egy osztályból, akkor egy olyan objektumot hozunk létre, amely rendelkezik az osztályon belül meghatározott adattagokkal,
 metódusokkal. Ezt a `new` kulcsszóval érhetjük el.  
-Ez az a művelet, amikor a sütőformából süteményt készítünk.
+Ez az a művelet, amikor új pizzát sütünk.
 
 #### Szintaxis
 
