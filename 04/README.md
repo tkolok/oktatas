@@ -52,7 +52,7 @@ class Pizza {
     }
 
     toString() {
-        return `A ${this._name} hozzávalói: ${this._ingredients.join(', ')}. Ára: ${this.price} Ft.`;
+        return `A ${this.name} hozzávalói: ${this._ingredients.join(', ')}. Ára: ${this.price} Ft.`;
     }
 
     get ingredients() {
@@ -60,7 +60,7 @@ class Pizza {
     }
 
     get name() {
-        return this._name;
+        return `${this._name} pizza`;
     }
 
     get price() {
@@ -72,6 +72,10 @@ class Pizza {
         this._name = value;
     }
 }
+
+const hamPizza = new Pizza('Sonkás', 'paradicsomszósz', 'kukorica', 'sajt', 'sonka');
+const margheritaPizza = new Pizza('Margherita', 'paradicsomszósz', 'bazsalikom', 'mozzarella', 'paradicsomkarikák');
+const pepperoniPizza = new Pizza('Tűzokádó pepperonis', 'paradicsomszósz', 'jalapeño', 'pepperoni', 'sonka');
 ```
 
 ### [Fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) (mező, adattag)
