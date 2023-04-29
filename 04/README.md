@@ -36,7 +36,7 @@ class Pizza {
 
     static getCheapest() {
         let cheapest = Pizza._pizzas[0];
-  
+
         for (let index = 1; index < Pizza._pizzas.length; index++) {
             if (Pizza._pizzas[index].price < cheapest.price) {
                 cheapest = Pizza._pizzas[index];
@@ -50,7 +50,7 @@ class Pizza {
         this._ingredients.push(ingredient);
     }
 
-    toSting() {
+    toString() {
         return `A ${this._name} hozzávalói: ${this._ingredients.join(', ')}. Ára: ${this.price} Ft.`;
     }
 
@@ -73,9 +73,11 @@ class Pizza {
 }
 ```
 
-### [fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) (mező, adattag) -
+### [fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields) (mező, adattag)
 
-Az osztályon belül az attribútumokat fieldnek nevezzük. Az adattagok elé nem kell `const`, `let` és `var` kulcsszót tenni.  
+Az osztályon belül az attribútumokat fieldnek nevezzük. Céljuk is ugyanaz, az adott objektummal kapcsolatban tárolhatunk itt adatokat. Az adattagok elé nem kell
+`const`, `let` és `var` kulcsszót tenni. Ezekre ugyanúgy kell hivatkozni, mintha egy objektum attribútumára hivatkoznánk (pl.:
+`margheritaPizza._ingredients`).  
 A példában a `_pizzas`, az `_ingredients` és a `_name` az adattagok. A `_pizzas` előtti `static` kulcsszót lentebb tárgyaljuk.
 
 #### Szintaxis
@@ -86,9 +88,14 @@ class {
 }
 ```
 
-### [Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions) (metódusok) -
+### [Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions) (metódusok)
 
-Az osztályon belül a függvényeket methodnak (metódusnak) nevezzük. A metódusok elé nem kell `function` kulcsszót tenni.
+Az osztályon belül a függvényeket methodnak (metódusnak) nevezzük. Céljuk az, hogy az adott objektum adattagjai alapján hajtsák végre a metódus törzsében
+található utasításokat. Ennek köszönhetően a metódusoknak jóval kevesebb paramétert kell átadni, mint egy függvénynek, hiszen a szükséges adatokat az adott
+objektum adattagjaiból olvassa ki. A metódusok elé nem kell `function` kulcsszót tenni. Ezekre ugyanúgy kell hivatkozni, mintha egy objektum attribútumára
+hivatkoznánk (pl.: `margheritaPizza.toString()`).  
+A példában a `getCheapest`, az `addIngredient` és a `toString` az egyszerű metódusok. A `getCheapest` előtti `static` kulcsszót lentebb tárgyaljuk. A példában
+speciális metódusok is vannak, amiket külön tárgyalunk.
 
 #### Szintaxis
 
@@ -103,8 +110,8 @@ class {
 ### [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
 
 A `constructor` egy speciális metódus, amely segítségével inicializálhatjuk (kezdő értéket adhatunk) egy új példány adattagjait a létrehozása pillanatában.  
-Ez az a pillanat, amikor megadhatjuk, hogy milyen hozzávalókból szeretnénk a süteményt készíteni. A sütőforma meg fogja adni, hogy hogyan nézzen ki a sütemény,
-de az ízét, állagát, színét a hozzávalók fogják meghatározni.
+Ez az a pillanat, amikor megadhatjuk, hogy milyen hozzávalókból szeretnénk a süteményt készíteni. A sütőforma meg fogja adni, hogy hogyan nézzen ki a sütemény
+(milyen adattagjai és metódusai vannak), de az ízük, állaguk, színük süteményenként eltérhet (példányonként más-más értékeket tárolnak az adattagok).
 
 #### Szintaxis
 
