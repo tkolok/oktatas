@@ -13,7 +13,7 @@
 </html>
 ```
 
-### Attribútumok
+### [Attribútumok](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)
 
 #### [id](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id)
 
@@ -99,7 +99,17 @@
     </tbody>
 </table>
 
+#### [a](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
+
+```html
+<a href="https://www.google.com">Google link</a>
+```
+
 #### [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+
+```html
+<button>Gomb</button>
+```
 
 ## HTML és JavaScript összekötése
 
@@ -120,7 +130,8 @@ Elérési útvonalak:
         <script src="./index.js" type="module"></script>
     </head>
     <body>
-        <input type="number">
+        <input type="number"
+               value="1">
         <button id="increase">+</button>
         <button id="decrease">-</button>
         <span id="value">0</span>
@@ -133,8 +144,25 @@ let input = document.querySelector('input');
 let span = document.querySelector('#value');
 let value = 0;
 
-document.querySelector('#increase').addEventListener('click', () => span.innerHTML = `${value + input.valueAsNumber}`);
-document.querySelector('#decrease').addEventListener('click', () => span.innerHTML = `${value - input.valueAsNumber}`);
+document.querySelector('#increase').addEventListener('click', () => increaseValue(input.valueAsNumber));
+document.querySelector('#decrease').addEventListener('click', () => increaseValue(-input.valueAsNumber));
+
+function increaseValue(increment) {
+    value += increment;
+    span.innerHTML = `${value}`;
+}
 ```
 
 ## Házi feladat
+
+Írj egy bevásárlási lista kezelőt!  
+Elvárt funkciók:
+- Mindig listázd ki a felvett tételeket!
+- Lehessen új tételt a listához adni!
+- Már felvett tételt lehessen törlni!
+
+Opcionális funkciók:
+- Már felvett tételt ne csak törölni lehessen, hanem megjelölni, mint megvásárolt tétel!
+- Meg lehessen adni, hogy egy adott tételből hány darab kell!
+- Minden tételhez lehessen árat rendelni!
+- A tételek alapján, jelenítsd meg a teljes bevásárlási lista összegét!
