@@ -81,4 +81,10 @@ function itemReducer(items, action) {
 }
 ```
 
-### React component
+### [JSX](https://react.dev/learn/writing-markup-with-jsx)
+
+### [React component](https://react.dev/learn/your-first-component)
+
+### [useState](https://react.dev/learn/updating-objects-in-state)
+
+### [useReducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)
