@@ -2,11 +2,22 @@
 
 ## [React](https://react.dev/)
 
-[StackBlitz](https://stackblitz.com/?starters=frontend)
+A React a világ egyik legnépszerűbb (ha nem a legnépszerűbb) JavaScript libraryje (könyvtára). Nem is véletlenül esett a váalsztásom rá, amikor elkezdtem írni
+ezt a "szakácskönyvet". Sokan használják, egyszerű, könnyen tanulható, jól dokumentált.
 
-A továbbiakban az itt található kódrészlet sorait fogjuk kielemezni.
+### [JSX](https://react.dev/learn/writing-markup-with-jsx)
+
+Az első, amit tudni kell a Reactról, hogy JSX-szel együtt használjuk. A kettő független egymástól, de általában kéz a kézben járnak. A JSX a JavaScript nyelv
+kiterjesztése. Ami JavaScriptben elérhető, az elérhető JSX-ben is, csak meg van fűszerezve némi HTML szintaxissal. Mivel nem natív JavaScriptről van szó, ezért
+szükséges, hogy a megírt kódunkat lefordítsuk. Ennek mikétjét [itt](#compile-kód-fordítás) részletezem. Szerencsére rengeteg online fejlesztő környezet létezik
+már, amelyeknek köszönhetően nincs szükségünk hosszú telepítésre, hanem azonnal belevághatunk a lecsóba. Az egyik ilyen a
+[StackBlitz](https://stackblitz.com/?starters=frontend), ahol _"React - Javascript"_ fülre rákattintva, azonnal kezdhetjük a lecsóba vágást.
+
+A továbbiakban az itt található kódrészlet sorait fogjuk kielemezni. Másold be a StackBlitz felületén az `App.js` fájlba, hogy lásd működés közben!
 
 ```jsx
+import React from 'react';
+
 export default function App() {
     let foods = [
         {
@@ -42,12 +53,12 @@ export default function App() {
 
 function Food(food) {
     return (
-        <Fragment key={`food-${food.name}`}>
+        <React.Fragment key={`food-${food.name}`}>
             <h3>{food.name}</h3>
             <ul>
                 {food.ingerdients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
             </ul>
-        </Fragment>
+        </React.Fragment>
     );
 }
 
@@ -62,8 +73,6 @@ function Header({children, color, subtitle, title}) {
 }
 ```
 
-### [JSX](https://react.dev/learn/writing-markup-with-jsx)
-
 #### [JavaScript a JSX-en belül](https://react.dev/learn/javascript-in-jsx-with-curly-braces)
 
 #### [Lista renderelés](https://react.dev/learn/rendering-lists)
@@ -74,8 +83,10 @@ Egy React komponens nem más, mint egy olyan `function`, aminek a visszatérési
 
 #### [Paraméter átadás](https://react.dev/learn/passing-props-to-a-component)
 
-#### [`children`](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
+#### [children](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
 
 #### [Feltételes megjelenítés](https://react.dev/learn/conditional-rendering)
 
 ### [Telepítés](https://react.dev/learn/add-react-to-an-existing-project)
+
+### Compile (kód fordítás)
