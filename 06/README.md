@@ -2,89 +2,80 @@
 
 ## [React](https://react.dev/)
 
+[StackBlitz](https://stackblitz.com/?starters=frontend)
+
+A továbbiakban az itt található kódrészlet sorait fogjuk kielemezni.
+
 ```jsx
-import {useReducer, useState} from 'react';
-
-let itemId = 0;
-
 export default function App() {
-    const [items, itemDispatch] = useReducer(itemReducer, []);
-    const [name, setName] = useState('');
-    const [price, setPrice] = useState(0);
-
+    let foods = [
+        {
+            ingerdients: ['Bors', 'Fűszerpaprika', 'Sertéshús', 'Só', 'Tojás', 'Zsemle', 'Zsemlemorzsa'],
+            name: 'Fasírt'
+        },
+        {
+            ingerdients: ['Háztartási keksz', 'Kakaó', 'Kókuszreszelék', 'Porcukor', 'Rumaroma', 'Tej', 'Vaj', 'Vaníliás cukor'],
+            name: 'Kókuszgolyó'
+        },
+        {
+            ingerdients: ['Paradicsom', 'Sajt', 'Sonka', 'Tészta'],
+            name: 'Pizza'
+        }
+    ];
+    let subtitle = 'Ahol a finom falatok készülnek';
+    let title = 'Finom falatok konyha';
+    
     return (
         <div>
-            <h1>Bevásárló lista</h1>
-            <input onChange={event => setName(event.target.value)}/>
-            <input onChange={event => setPrice(event.target.valueAsNumber)}
-                   type="number"/>
-            <button onClick={() => addItem(name, price)}>Új tétel hozzáadása</button>
-            <Table items={items} removeItem={removeItem}/>
+            <Header color="blue" subtitle={subtitle} title={title}>
+                <img height="150"
+                     src="https://rupanerkonyha.hu/wp-content/uploads/2018/10/DSC_2365k.jpg"
+                     width="225"/>
+                <img height="150"
+                     src="https://images.ctfassets.net/nw5k25xfqsik/64VwvKFqxMWQORE10Tn8pY/200c0538099dc4d1cf62fd07ce59c2af/20220211142754-margherita-9920.jpg"
+                     width="196"/>
+            </Header>
+            {foods.map(Food)}
         </div>
     );
-
-    function addItem(name, price) {
-        itemDispatch({
-            item: {
-                id: itemId++,
-                name,
-                price
-            },
-            type: 'add'
-        });
-    }
-
-    function removeItem(id) {
-        itemDispatch({
-            id,
-            type: 'remove'
-        });
-    }
 }
 
-function Item(item, removeItem) {
+function Food(food) {
     return (
-        <tr key={`item-${item.id}`}>
-            <td>{item.name}</td>
-            <td>{item.price} Ft</td>
-            <td>
-                <button onClick={() => removeItem(item.id)}>Törlés</button>
-            </td>
-        </tr>
+        <Fragment key={`food-${food.name}`}>
+            <h3>{food.name}</h3>
+            <ul>
+                {food.ingerdients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
+            </ul>
+        </Fragment>
     );
 }
 
-function Table({items, removeItem}) {
+function Header({children, color, subtitle, title}) {
     return (
-        <table>
-            <thead>
-            <tr>
-                <th>Tétel</th>
-                <th>Ár</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            {items.map(item => Item(item, removeItem))}
-            </tbody>
-        </table>
+        <>
+            {children}
+            <h1>{title}</h1>
+            {subtitle && <small style={{color}}>{subtitle}</small>}
+        </>
     );
-}
-
-function itemReducer(items, action) {
-    switch (action.type) {
-        case 'add':
-            return [...items, action.item];
-        case 'remove':
-            return items.filter(item => item.id !== action.id);
-    }
 }
 ```
 
 ### [JSX](https://react.dev/learn/writing-markup-with-jsx)
 
+#### [JavaScript a JSX-en belül](https://react.dev/learn/javascript-in-jsx-with-curly-braces)
+
+#### [Lista renderelés](https://react.dev/learn/rendering-lists)
+
 ### [React component](https://react.dev/learn/your-first-component)
 
-### [useState](https://react.dev/learn/updating-objects-in-state)
+Egy React komponens nem más, mint egy olyan `function`, aminek a visszatérési értéke egy JSX template. 
 
-### [useReducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)
+#### [Paraméter átadás](https://react.dev/learn/passing-props-to-a-component)
+
+#### [`children`](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
+
+#### [Feltételes megjelenítés](https://react.dev/learn/conditional-rendering)
+
+### [Telepítés](https://react.dev/learn/add-react-to-an-existing-project)
