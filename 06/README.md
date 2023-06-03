@@ -77,9 +77,10 @@ function Header({children, color, subtitle, title}) {
 
 ### [React component](https://react.dev/learn/your-first-component)
 
-Egy React komponens nem más, mint egy olyan `function`, aminek a visszatérési értéke egy JSX objektum. Ezeknek a neve mindig nagy betűvel kezdődik, hogy meg
-lehessen különböztetni az egyszerű HTML elemektől. Egy komponenst JSX-en belül úgy tudunk beszúrni, ahogy egy egyszerű HTML elemet is szokás: `<MyComponent>`.
-JSX-ben minden elemet le kell zárni (és ez az egyszerű elemekre is igaz):
+Egy React komponens nem más, mint egy olyan function, aminek a visszatérési értéke egy JSX objektum. Ezeknek a neve mindig nagy betűvel kezdődik, hogy meg
+lehessen különböztetni az egyszerű HTML elemektől. A fenti példában az `App`, a `Food` és a `Header` functionök is React komponensek, hiszen mindegyik egy-egy
+JSX objektummal tér vissza. Egy komponenst JSX-en belül úgy tudunk beszúrni, ahogy egy egyszerű HTML elemet is szokás: `<MyComponent>`. JSX-ben minden elemet le
+kell zárni (és ez az egyszerű elemekre is igaz):
 - Ha nincs gyermek elem: `<MyComponent/>`.
 - Ha van gyermek elem: `<MyComponent>...</MyComponent>`.
 
