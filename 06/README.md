@@ -13,7 +13,7 @@ szükséges, hogy a megírt kódunkat lefordítsuk. Ennek mikétjét [itt](#comp
 már, amelyeknek köszönhetően nincs szükségünk hosszú telepítésre, hanem azonnal belevághatunk a lecsóba. Az egyik ilyen a
 [StackBlitz](https://stackblitz.com/?starters=frontend), ahol _"React - Javascript"_ fülre rákattintva, azonnal kezdhetjük a lecsóba vágást.
 
-A továbbiakban az itt található kódrészlet sorait fogjuk kielemezni. Másold be a StackBlitz felületén az `App.js` fájlba, hogy lásd működés közben!
+A továbbiakban az itt található kódrészlet sorait fogjuk kielemezni. Másold be az `App.js` fájlba a StackBlitz felületén, hogy lásd működés közben!
 
 ```jsx
 import React from 'react';
@@ -36,15 +36,13 @@ export default function App() {
     let subtitle = 'Ahol a finom falatok készülnek';
     let title = 'Finom falatok konyha';
     
-    return (
+    return ( // Ez egy JSX objektum
         <div>
             <Header color="blue" subtitle={subtitle} title={title}>
-                <img height="150"
-                     src="https://rupanerkonyha.hu/wp-content/uploads/2018/10/DSC_2365k.jpg"
-                     width="225"/>
-                <img height="150"
-                     src="https://images.ctfassets.net/nw5k25xfqsik/64VwvKFqxMWQORE10Tn8pY/200c0538099dc4d1cf62fd07ce59c2af/20220211142754-margherita-9920.jpg"
-                     width="196"/>
+                <img alt="Töltött káposzta"
+                     src="https://github.com/tkolok/oktatas/blob/main/assets/stuffed_cabbage.jpg?raw=true"/>
+                <img alt="Pizza"
+                     src="https://github.com/tkolok/oktatas/blob/main/assets/pizza.jpg?raw=true"/>
             </Header>
             {foods.map(Food)}
         </div>
@@ -52,7 +50,7 @@ export default function App() {
 }
 
 function Food(food) {
-    return (
+    return ( // Ez is JSX objektum
         <React.Fragment key={`food-${food.name}`}>
             <h3>{food.name}</h3>
             <ul>
@@ -63,7 +61,7 @@ function Food(food) {
 }
 
 function Header({children, color, subtitle, title}) {
-    return (
+    return ( // És ez is JSX objektum
         <>
             {children}
             <h1>{title}</h1>
@@ -79,13 +77,43 @@ function Header({children, color, subtitle, title}) {
 
 ### [React component](https://react.dev/learn/your-first-component)
 
-Egy React komponens nem más, mint egy olyan `function`, aminek a visszatérési értéke egy JSX template. 
+Egy React komponens nem más, mint egy olyan `function`, aminek a visszatérési értéke egy JSX objektum. Ezeknek a neve mindig nagy betűvel kezdődik, hogy meg
+lehessen különböztetni az egyszerű HTML elemektől. Egy komponenst JSX-en belül úgy tudunk beszúrni, ahogy egy egyszerű HTML elemet is szokás: `<MyComponent>`.
+JSX-ben minden elemet le kell zárni (és ez az egyszerű elemekre is igaz):
+- Ha nincs gyermek elem: `<MyComponent/>`.
+- Ha van gyermek elem: `<MyComponent>...</MyComponent>`.
+
+```jsx
+import React from 'react';
+
+export default function App() {
+    return (
+        <div>
+            <button>Ez egy egyszerű HTML gomb</button>
+            <br/>
+            <Button>Ez a lentebb definiált gomb</Button>
+            <br/>
+            <ItalicButton text={'Ez egy speciális gomb, ami a "Button" komponenst használja fel'}/>
+        </div>
+    );
+}
+
+function Button({children}) {
+    return <button>{children}</button>;
+}
+
+function ItalicButton({text}) {
+    return <Button><i>{text}</i></Button>;
+}
+```
 
 #### [Paraméter átadás](https://react.dev/learn/passing-props-to-a-component)
 
 #### [children](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
 
 #### [Feltételes megjelenítés](https://react.dev/learn/conditional-rendering)
+
+#### [Fragment](https://react.dev/reference/react/Fragment)
 
 ### [Telepítés](https://react.dev/learn/add-react-to-an-existing-project)
 
