@@ -77,6 +77,18 @@ Ahogy HTML-t helyezhetünk el a JavaScript kódunkban a JSX-nek köszönhetően,
 (`{`, `}`) közé írni a kívánt kódrszéletet. Például a `Header` functionön belül a `{title}` sor arra szolgál, hogy a paraméterként kapott `title` értéke be lesz
 helyettesítve a HTML-en belül. A többi esetben is ugyanez történik: a kapcsos zárójelek közötti kódrészlet kiértékelődik és a kapott érték bekerül a HTML-be.
 
+```jsx
+function Header({children, color, subtitle, title}) {
+    return (
+        <>
+            {children}
+            <h1>{title}</h1>
+            {subtitle && <small style={{color}}>{subtitle}</small>}
+        </>
+    );
+}
+```
+
 #### [Lista renderelés](https://react.dev/learn/rendering-lists)
 
 Sokszor találkozhatunk olyan esetekkel, amikor hasonló adatokat akarunk kilistázni (hozzávalók, kedvenc ételek, 1337 kép a legjobban sikerült tortánkról).
@@ -86,6 +98,35 @@ a `Food` function közepén található 2 különböző példa. A `{foods.map(Fo
 `{food.ingerdients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}` esetében egy inline functiont adunk meg, ami szintén egy JSX objektummal tér
 vissza.  
 Nagyon fontos, hogy minden esetben adjuk meg a `key` attribútumot, aminek egyedinek kell lennie elemenként.
+
+```jsx
+export default function App() {
+    // ...
+
+    return (
+        <div>
+            <Header color="blue" subtitle={subtitle} title={title}>
+                <img alt="Töltött káposzta"
+                     src="https://github.com/tkolok/oktatas/blob/main/assets/stuffed_cabbage.jpg?raw=true"/>
+                <img alt="Pizza"
+                     src="https://github.com/tkolok/oktatas/blob/main/assets/pizza.jpg?raw=true"/>
+            </Header>
+            {foods.map(Food)}
+        </div>
+    );
+}
+
+function Food(food) {
+    return (
+        <React.Fragment key={`food-${food.name}`}>
+            <h3>{food.name}</h3>
+            <ul>
+                {food.ingerdients.map(ingredient => <li key={ingredient}>{ingredient}</li>)}
+            </ul>
+        </React.Fragment>
+    );
+}
+```
 
 ### [React component](https://react.dev/learn/your-first-component)
 
@@ -127,7 +168,59 @@ Mivel a React komponensek functionök, ezért valahogy a paramétereket át kell
 egyszerű string értéket tartalmaz. A `subtitle` és a `title` értékei kapcsos zárójelek közt vannak, ezért azok ki fognak értékelődni, és az így kapott értékeket
 adjuk át, mint paraméterek (valójában azok is stringek, de bármilyen más értéket tartalmazhatnának).
 
+```jsx
+export default function App() {
+    // ...
+    let subtitle = 'Ahol a finom falatok készülnek';
+    let title = 'Finom falatok konyha';
+
+    return (
+        <div>
+            <Header color="blue" subtitle={subtitle} title={title}>
+                <img alt="Töltött káposzta"
+                     src="https://github.com/tkolok/oktatas/blob/main/assets/stuffed_cabbage.jpg?raw=true"/>
+                <img alt="Pizza"
+                     src="https://github.com/tkolok/oktatas/blob/main/assets/pizza.jpg?raw=true"/>
+            </Header>
+            {foods.map(Food)}
+        </div>
+    );
+}
+
+function Header({children, color, subtitle, title}) {
+    return (
+        <>
+            {children}
+            <h1>{title}</h1>
+            {subtitle && <small style={{color}}>{subtitle}</small>}
+        </>
+    );
+}
+```
+
 #### [children](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
+
+A `children` egy speciális paraméter. Ez azt a JSX objektumot tartalmazza, amit az adott komponens nyitó és záró tagjei közé teszünk. Ahogy látható a `Header`
+komponensnek két `img` gyermeke van. Ezek fognak megjelenni a `h1` előtt.
+
+```jsx
+<Header color="blue" subtitle={subtitle} title={title}>
+    <img alt="Töltött káposzta"
+         src="https://github.com/tkolok/oktatas/blob/main/assets/stuffed_cabbage.jpg?raw=true"/>
+    <img alt="Pizza"
+         src="https://github.com/tkolok/oktatas/blob/main/assets/pizza.jpg?raw=true"/>
+</Header>
+
+function Header({children, color, subtitle, title}) {
+    return (
+        <>
+            {children}
+            <h1>{title}</h1>
+            {subtitle && <small style={{color}}>{subtitle}</small>}
+        </>
+    );
+}
+```
 
 #### [Feltételes megjelenítés](https://react.dev/learn/conditional-rendering)
 
