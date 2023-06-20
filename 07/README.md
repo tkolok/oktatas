@@ -102,7 +102,6 @@ function reducer(list, action) {
 }
 ```
 
-> A `useReducer`-nek átadhatunk egy 3. paramétert is, amiről bővebben a hivatalos [dokumentációban](https://react.dev/reference/react/useReducer) olvashatsz
-> részletesebben.
+> A `useReducer`-nek átadhatunk egy 3. paramétert is, amiről bővebben a hivatalos [dokumentációban](https://react.dev/reference/react/useReducer) olvashatsz.
 
 ### [createContext](https://react.dev/learn/passing-data-deeply-with-context)
