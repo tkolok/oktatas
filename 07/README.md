@@ -46,4 +46,63 @@ function StuffedCabbageCounter() {
 
 ### [useReducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)
 
+A `useReducer` function ugyanarra szolgál, mint a `useState`, csak némi csavarral megfűszerezi azt. Első paraméterként egy _reducer_ functiont vár el, majd egy
+kezdő értéket. Ennek a visszatérési értéke is egy 2 elemű tömb, aminek az 1. eleme maga az érték lesz, míg a 2. egy úgynevezett _dispatch_ function, amivel ezt
+az értéket tudjuk módosítani (akárcsak a `useState` esetében).  
+A _reducer_ functionnek a változó új értékével kell visszatérnie. Ennek az 1. paramétere a változó jelenlegi értéke, a 2. pedig egy objektum, amely segít
+meghatározni, hogy hogyan szeretnénk módosítani a jelenlegi értéket.  
+Igen, tudom... ez most elég kusza, de lássuk ezt példán keresztül.
+
+```jsx
+import {useReducer, useState} from 'react';
+
+function ShoppingList() {
+    let [list, dispatch] = useReducer(reducer, []);
+    let [name, setName] = useState('');
+
+    return (
+        <div>
+            <input onChange={event => setName(event.target.value)}/>
+            <button onClick={() => add()}>Hozzáadás</button>
+            <ul>
+                {list.map(item => (
+                    <li key={item}>
+                        {item}
+                        <button onClick={() => remove(item)}>Törlés</button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+    
+    function add() {
+        dispatch({
+            name: name,
+            type: 'add'
+        });
+    }
+    
+    function remove(itemName) {
+        dispatch({
+            name: itemName,
+            type: 'remove'
+        });
+    }
+}
+
+function reducer(list, action) {
+    switch (action.type) {
+        case 'add':
+            return [...list, action.name];
+        case 'remove':
+            return list.filter(item => item !== action.name);
+    }
+
+    return list;
+}
+```
+
+> A `useReducer`-nek átadhatunk egy 3. paramétert is, amiről bővebben a hivatalos [dokumentációban](https://react.dev/reference/react/useReducer) olvashatsz
+> részletesebben.
+
 ### [createContext](https://react.dev/learn/passing-data-deeply-with-context)
