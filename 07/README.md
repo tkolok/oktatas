@@ -115,3 +115,35 @@ Ha elsőre ez így nem világos, akkor lassan, a kódot követve olvasd át az e
 > A `useReducer`-nek átadhatunk egy 3. paramétert is, amiről bővebben a hivatalos [dokumentációban](https://react.dev/reference/react/useReducer) olvashatsz.
 
 ### [createContext](https://react.dev/learn/passing-data-deeply-with-context)
+
+### _use_ kezdetű React functionök
+
+Fontos megjegyezni, hogy minden _use_ szóval kezdődő functiont a React komponensek legelső soraiban kell elhelyeznünk, és akár felhasználjuk, akár nem,
+ott kell szerepelnie.  
+A következő példa azért nem jó, mert nem minden esetben kérdezzük le a `name` értékét.
+
+```jsx
+function BadExample({bool}) {
+    if (bool) {
+        let [name, setName] = useState(null);
+
+        return <b>Hello {variable}!</b>;
+    } else {
+        return <span>Hello világ!</span>;
+    }
+}
+```
+
+Ez helyesen így nézne ki:
+
+```jsx
+function GoodExample({bool}) {
+    let [name, setName] = useState(null);
+
+    if (bool) {
+        return <b>Hello {name}!</b>;
+    } else {
+        return <span>Hello világ!</span>;
+    }
+}
+```
