@@ -74,14 +74,14 @@ function ShoppingList() {
             </ul>
         </div>
     );
-    
+
     function add() {
         dispatch({
             name: name,
             type: 'add'
         });
     }
-    
+
     function remove(itemName) {
         dispatch({
             name: itemName,
@@ -101,6 +101,16 @@ function reducer(list, action) {
     return list;
 }
 ```
+
+A fentebbi kódban a `<input onChange={event => setName(event.target.value)}/>` sor arra szolgál, hogy a `name` változó értéke az inputba írt szöveggel együtt
+változzon.  
+De térjünk rá a reducerre. Amikor a felhasználó rákattint a _"Hozzáadás"_ gombra, akkor az `add` functiont meghívjuk, ami meghívja a `dispatch`
+functiont egy objektummal. A `dispatch` a háttérben meghívja a `reducer` function a változó jelenlegi értékével és a `dispatch`-nek átadott paraméterrel. Ezt
+követően a `reducer`-ben megvizsgáljuk, hogy mi a `type`-ja az adott műveletnek és az alapján visszatérünk valamivel. Jelen esetben a `type` értéke `'add'`, így
+a hozzátartozó `case` ág fog lefutni.  
+A _"Törlés"_ gomb megnyomásánál hasonlóan fog minden történni. A `remove` function meghívja a `dispatch` functiont, amely a `reducer` functionnek 2.
+paraméterként átadja a paraméterként kapott objektumot, majd a `reducer` function az alapján tér vissza a `list` új értékével.  
+Ha elsőre ez így nem világos, akkor lassan, a kódot követve olvasd át az egészet párszor.
 
 > A `useReducer`-nek átadhatunk egy 3. paramétert is, amiről bővebben a hivatalos [dokumentációban](https://react.dev/reference/react/useReducer) olvashatsz.
 
