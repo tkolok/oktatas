@@ -114,7 +114,86 @@ Ha elsőre ez így nem világos, akkor lassan, a kódot követve olvasd át az e
 
 > A `useReducer`-nek átadhatunk egy 3. paramétert is, amiről bővebben a hivatalos [dokumentációban](https://react.dev/reference/react/useReducer) olvashatsz.
 
-### [createContext](https://react.dev/learn/passing-data-deeply-with-context)
+### [Context](https://react.dev/learn/passing-data-deeply-with-context)
+
+A _context_ célja is nagyjából ugyanaz, mint az előző 2 eszköznek, azzal a különbséggel, hogy ez egy olyan érétéket tárol, amely minden gyermek komponensből
+elérhető. Ilyen lehet például a bejelentkezett felhasználó adatai, a kiválasztott nyelv vagy egy webshopon a kosár tartalma.
+
+```jsx
+import {createContext, useContext, useState} from 'react';
+
+let menus = [
+    {
+        mainCourse: 'Hentes tokány vegyes körettel',
+        name: 'A menü',
+        soup: 'Gyümölcs leves'
+    },
+    {
+        mainCourse: 'Csikós tokány rizzsel',
+        name: 'B menü',
+        soup: 'Tyúkhús leves'
+    },
+    {
+        mainCourse: 'Bakonyi tokány nokedlivel',
+        name: 'C menü',
+        soup: 'Lebbencs leves'
+    }
+];
+let MenuContext = createContext(null);
+
+function MenuSelector() {
+    let [menu, setMenu] = useState(menus[0]);
+
+    return (
+        <MenuContext.Provider value={menu}>
+            {menus.map(current => <button key={current.name} onClick={() => setMenu(current)}>{current.name}</button>)}
+            <Menu/>
+        </MenuContext.Provider>
+    );
+}
+
+function Menu() {
+    let menu = useContext(MenuContext);
+
+    return (
+        <div>
+            <p>A(z) <b>{menu.name}</b> tartalma:</p>
+            <b>Főétel:</b> {menu.mainCourse}
+            <br/>
+            <b>Leves:</b> {menu.soup}
+        </div>
+    );
+}
+```
+
+A _context_ használata 3 lépésből épül fel. Először létrehozzuk a `createContext` function segítségével magát a _contextet_. Ennek egy paramétere van, egy kezdő
+érték.
+
+```jsx
+let MenuContext = createContext(null);
+```
+
+A 2. lépésben beszúrjuk a _contexthez_ tartozó _providert_ a JSX-be és értéket adunk neki a `value` attribútum által.
+
+```jsx
+<MenuContext.Provider value={menu}>
+    ...
+</MenuContext.Provider>
+```
+
+Ezáltal elérhető lesz a _context_ értéke minden gyermek elem számára. Ezt úgy kell elképzelni, mintha egy HTML elemnek piros háttér színt adnánk, és ennek
+köszönhetően az összes gyermek elemének a háttér színe is piros lenne. Valójában csak a kiinduló elemnek változott a háttér színe, de a gyermek elemek azt fel
+tudják használni. Nagyjából ugyanez a helyzet a _contextnél_ is. A _provideren_ keresztül beállítunk egy értéket, és ehhez hozzá fér minden gyermek elem. Jelen
+esetben ez az érték mindig a `menu`-vel fog megegyezni. Ahogy a felhasználó módosítja kiválasztott menüt, úgy az látszódni fog a gyermek elemeknél is.  
+A 3. lépésben a `useContext` functiont meghívjuk az adott gyermek komponenseken belül. Ez paraméterként azt a `contextet` várja, amelynek az értékét fel
+szeretnénk használni.
+
+```jsx
+let menu = useContext(MenuContext);
+```
+
+Ahogy a kiinduló példánkban is látható, a `Menu` komponens semmilyen paraméterrel nem rendelkezik, mégis képes felhasználni a `menu` változó értékét. És ez a
+_context_ célja, hogy bármilyen mélységben elérhető legyen egy változó értéke, anélkül hogy az összes gyermek elemnek egyesével adogatnánk azt paraméterként.
 
 ### _use_ kezdetű React functionök
 
