@@ -210,6 +210,9 @@ Az 1. sorban értéket adtunk az `a` változónak. A 2. sorban először lekérd
 console.log('Szöveg', 150, null);
 ```
 
+> Ahogy látható minden sor végén található egy `;`. Általában ezzel jelezzük, ha egy utasítás végetért. Más nyelvekben ez kötelező, de JavaScriptben nem, én
+> mégis ajánlom, hogy minden utasítást zárjunk le.
+
 ## Házi feladat
 
 1. Írj kód részletet, amelyben létrehozol 2 szám változót, majd ezek összegét letárolod egy új változóban!
