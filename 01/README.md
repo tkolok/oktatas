@@ -6,13 +6,62 @@ Az informatika önálló tudományág, amely a különböző eszközökkel – d
 megszerzésével, gyűjtésével, feldolgozásával, tárolásával, sokszorosításával és továbbításával foglalkozik. Az általános célú programozási nyelvek (esetünkben
 a JavaScript) olyan programozási nyelvek, amiket széleskörűen fel lehet használni szoftverek írására.
 
+## "Fejlesztői környezet" megnyitása
+
+- [Google Chrome](https://www.google.com/chrome) / [Microsoft Edge](https://www.microsoft.com/edge): Kattints az egér jobb gombjával a weboldal bármely elemére,
+  majd válaszd a Vizsgálat/Inspect lehetőséget. Válaszd a Konzol/Console fület.
+- [Mozilla Firefox](https://www.mozilla.org/firefox): Tools > Web Developer > Web Developer Tools. Válaszd a Konzol/Console fület.
+
 ## Data types (Típusok)
 
-Az alábbi típusok érhetőek el JavaScriptben:
+Megkülönböztetjük az adatokat az alapján, hogy milyen adatatot szeretnénk tárolni. Az alábbi típusok érhetőek el JavaScriptben.
 
-- Számok (number), pl.: 5, 12.5, -87.
-- Karakterláncok (string), pl.: 'alma', "Körte"
-- Booleanek (boolean), pl.: true, false
+### [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) (szám)
+
+Ezek ugyanolyan számok, mint a való életben is használt egész, vagy tört számok.  
+Például: `5`, `12.5`, `-87`.
+
+### [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) (karakterlánc)
+
+Ezekre úgy gondoljunk, min egyszerű szöveges adatra. Ezeket `'` vagy `"` jelek közé kell írni.  
+Például: `'alma'`, `"Körte"`, `"123"`.
+
+### [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
+
+A boolean nem más, mint igazságértéket tartalmazó adat. Egy ilyen adat csak 2 értéket vehet fel: `true` (igaz) vagy `false` (hamis).
+
+### [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
+
+Az `undefined` kicsit kilóg a többi adat közül, mert ezzel jelöljük azt, ha nincs adat.
+
+### [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) (tömb)
+
+```javascript
+let a = [10, 20, 30];
+a[0];
+a[1];
+a[2];
+a.push('negyven');
+a[3];
+a.length;
+```
+
+### [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) (objektum)
+
+```javascript
+let a = {
+    address: {
+        city: 'Debrecen',
+        street: 'Piac utca'
+    },
+    firstname: 'József',
+    lastname: 'Példa'
+};
+`${a.firstname} ${a.lastname}`;
+a.address.city;
+a.age = 99;
+a.age;
+```
 
 ## Literals (Literálok)
 
@@ -161,40 +210,11 @@ Az 1. sorban értéket adtunk az `a` változónak. A 2. sorban először lekérd
 console.log('Szöveg', 150, null);
 ```
 
-## Tömbök (Arrays)
-
-```javascript
-let a = [10, 20, 30];
-a[0];
-a[1];
-a[2];
-a.push('negyven');
-a[3];
-a.length;
-```
-
-## Objektumok (Objects)
-
-```javascript
-let a = {
-    address: {
-        city: 'Debrecen',
-        street: 'Piac utca'
-    },
-    firstname: 'József',
-    lastname: 'Példa'
-};
-`${a.firstname} ${a.lastname}`;
-a.address.city;
-a.age = 99;
-a.age;
-```
-
 ## Házi feladat
 
 1. Írj kód részletet, amelyben létrehozol 2 szám változót, majd ezek összegét letárolod egy új változóban!
-1. Írj kód részletet, amelyben létrehozol 2 akármilyen változót, majd azok értékeit megcseréled!
-1. Írj kód részletet, amelyben létrehozol egy szám változót, majd egy újabb változóban letárolod, hogy a szám osztható 2-vel és 5-tel!
-1. Írj kód részletet, amelyben létrehozol egy 5 számot tartalmazó tömböt, majd egy új változóban letárolod ezek összegét!
-1. Írj kód részletet, amelyben létrehozol 3 akármilyen változót, majd ezek értékét egy object típusú változóba lemented! Ezután irasd ki az objektum összes
+2. Írj kód részletet, amelyben létrehozol 2 akármilyen változót, majd azok értékeit megcseréled!
+3. Írj kód részletet, amelyben létrehozol egy szám változót, majd egy újabb változóban letárolod, hogy a szám osztható-e 2-vel és 5-tel!
+4. Írj kód részletet, amelyben létrehozol egy 5 számot tartalmazó tömböt, majd egy új változóban letárolod ezek összegét!
+5. Írj kód részletet, amelyben létrehozol 3 akármilyen változót, majd ezek értékét egy object típusú változóba lemented! Ezután irasd ki az objektum összes
    attribútumát!
