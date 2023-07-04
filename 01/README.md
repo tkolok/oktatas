@@ -14,7 +14,9 @@ a JavaScript) olyan programozási nyelvek, amiket széleskörűen fel lehet hasz
 
 ## Data types (Típusok)
 
-Megkülönböztetjük az adatokat az alapján, hogy milyen adatatot szeretnénk tárolni. Az alábbi típusok érhetőek el JavaScriptben.
+Megkülönböztetjük az adatokat az alapján, hogy milyen adatatot szeretnénk tárolni. Két családba sorolhatjuk a típusokat:
+[primitve](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) (egyszerű) és reference (összetett, referencia alapú). Először rágjuk át magunkat az
+egyszerű típusokon.
 
 ### [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) (szám)
 
@@ -33,35 +35,6 @@ A boolean nem más, mint igazságértéket tartalmazó adat. Egy ilyen adat csak
 ### [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
 
 Az `undefined` kicsit kilóg a többi adat közül, mert ezzel jelöljük azt, ha nincs adat.
-
-### [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) (tömb)
-
-```javascript
-let a = [10, 20, 30];
-a[0];
-a[1];
-a[2];
-a.push('negyven');
-a[3];
-a.length;
-```
-
-### [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) (objektum)
-
-```javascript
-let a = {
-    address: {
-        city: 'Debrecen',
-        street: 'Piac utca'
-    },
-    firstname: 'József',
-    lastname: 'Példa'
-};
-`${a.firstname} ${a.lastname}`;
-a.address.city;
-a.age = 99;
-a.age;
-```
 
 ## Literals (Literálok)
 
@@ -147,6 +120,37 @@ Az 1. sorban értéket adtunk az `a` változónak. A 2. sorban először lekérd
 > [`var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var) kulcsszavakkal is hasonló módon hozhatunk létre változókat. Van
 > eltérés a változók viselkedésében attól függően, hogy milyen módon hoztuk őket létre, de az nem része ennek a "tananyagnak". Az egyszerűség kedvéért a
 > továbbiakban a `let`-es változatot fogom használni.
+
+## Reference types (összetett, referencia alapú típusok)
+
+### [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) (tömb)
+
+```javascript
+let a = [10, 20, 30];
+a[0];
+a[1];
+a[2];
+a.push('negyven');
+a[3];
+a.length;
+```
+
+### [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) (objektum)
+
+```javascript
+let a = {
+    address: {
+        city: 'Debrecen',
+        street: 'Piac utca'
+    },
+    firstname: 'József',
+    lastname: 'Példa'
+};
+`${a.firstname} ${a.lastname}`;
+a.address.city;
+a.age = 99;
+a.age;
+```
 
 ## Operators (Operátorok)
 
