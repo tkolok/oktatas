@@ -93,8 +93,8 @@ class {
 
 ### [Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions) (metódusok)
 
-Az osztályon belül a függvényeket methodnak (metódusnak) nevezzük. Céljuk az, hogy az adott objektum adattagjai alapján hajtsák végre a metódus törzsében
-található utasításokat. Ennek köszönhetően a metódusoknak jóval kevesebb paramétert kell átadni, mint egy függvénynek, hiszen a szükséges adatokat az adott
+Az osztályon belül a functionöket methodnak (metódusnak) nevezzük. Céljuk az, hogy az adott objektum adattagjai alapján hajtsák végre a metódus törzsében
+található utasításokat. Ennek köszönhetően a metódusoknak jóval kevesebb paramétert kell átadni, mint egy functionnek, hiszen a szükséges adatokat az adott
 objektum adattagjaiból olvassa ki. A metódusok elé nem kell `function` kulcsszót tenni. Ezekre ugyanúgy kell hivatkozni, mintha egy objektum attribútumára
 hivatkoznánk (pl.: `margheritaPizza.toString()`).  
 A példában a `getCheapest`, az `addIngredient` és a `toString` az egyszerű metódusok. A `getCheapest` előtti `static` kulcsszót lentebb tárgyaljuk. A példában

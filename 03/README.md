@@ -2,15 +2,20 @@
 
 ## [Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) (függvények)
 
-A functionök (függvények) nem mások, mint újrafelhasználható paraméterezhető utasítás blokkok.
+A functionök nem mások, mint újrafelhasználható paraméterezhető utasítás blokkok, amelyek a paraméterektől függően csinálnak valamit.  
+A functionökre gondoljunk úgy, mintha konyhai műveletek lennének, például főzés. Általában hogyan hajtjuk végre a főzést? Fogunk egy edényt, vizet engedünk
+bele, felforraljuk a vizet, az edénybe tesszük a főzésre váró ételt, néha megkavarjuk. De ez nem mindig van így. Az ételtől függ, hogy mennyi ideig főzzük, hogy
+kell-e kavargatni, hogy vizet forralunk-e, és így tovább. Ezek a változó dolgok lesznek a function (jelen esetben a főzés) paraméterei. Az eredménye viszont
+mindig egy megfőzött étel lesz.
 
 ### Function létrehozás
 
-#### Szintaxis
+Ahhoz, hogy egy functiont újra és újra fel tudjunk használni, először is létre kell hozni.  
+Ezt JavaScriptben az alábbi 2 módon tehetjük meg:
 
 ```
 function <function neve>(<paraméter lista>) {
-   <function törzse>
+    <function törzse> // utasítások
 }
 ```
 
@@ -18,25 +23,29 @@ vagy
 
 ```
 let <function neve> = (<paraméter lista>) => { // ebben az esetben a function egy változó
-   <function törzse>
+    <function törzse> // utasítások
 }
 ```
 
 #### Példák
 
 ```javascript
-function sum1(a, b) {
+function sum(a, b) {
     return a + b;
 }
 
-let sum2 = (a, b) => {
-    return a + b;
+let multiply1 = (a, b) => {
+    return a * b;
 };
 
-let sum3 = (a, b) => a + b;
+let multiply2 = (a, b) => a * b;
 ```
 
-### Function meghívása
+A fentebbi példában létrehoztunk 3 functiont. Mindegyik egy két paraméteres function. A `sum` function össze fogja adni a paraméterként kapott számokat. A
+`multiply1` és a `multiply2` functionök pedig össze fogják szorozni a paramétereket. A `multiply2` function egy rövidített változata a `multiply1` function,
+működésük teljes mértékben megegyezik. A [`return`](#return) kulcsszót kicsit lentebb tárgyaljuk.
+
+### Function meghívása -
 
 #### Szintaxis
 
@@ -71,7 +80,7 @@ mintha a fájlt átküldenénk a másik fél számára, így mind a kettőnk sz�
 kihatással a másik példányára. A referencia szerinti átadás esetében úgy kell elképzelni ezt, minta a felhőben osztanánk meg egymással a fájlt. Egyetlen egy
 példány létezik a fájlból, és ha az egyikünk módosítja, akkor a másik is látni fogja a módosításokat. Így, ha egy paraméterként kapott stringet módosítunk a
 functionön belül, akkor az nem lesz kihatással az eredeti stringre, de ha egy objektum paramétert módosítunk, akkor az eredeti objektum is módosulni fog (hiszen
-a két objektum ugyanaz).
+a két objektum ugyanaz). (Sajnos erre nem találtam konyhai példát. :disappointed: )
 
 ```javascript
 function multiply(a, b = 1) { // b változó default értéke 1
@@ -90,6 +99,8 @@ list(5, 'alma', null, true, {name: 'Jóska'});
 ```
 
 ## [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) functions
+
+Most pedig lássunk pár beépített functiont. Először kezdjük a stringekkel.
 
 ### [.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
 
@@ -153,7 +164,7 @@ Eltávolítja a szóközöket a string elejéről és végéről.
 
 ### [.indexOf(searchString)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
 
-Megadja, hogy hányadik indexen helyezkedik el a `searchString`.
+Megadja, hogy hányadik indexen helyezkedik el a `searchString`. Ha a `searchString` nem található meg a strinben, akkor `-1` lesz a visszatérési érték.
 
 ```javascript
 'ALMA'.indexOf('MA'); // 2
