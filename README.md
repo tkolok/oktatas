@@ -6,11 +6,11 @@ megismerkedni a programozással.
 
 Aki weboldal készítésén töri a fejét, annak a következő sorrendben ajánlom a felkínált fogásokat:
 1. [html](/html)
-2. [css](tkolok/oktatas/css)
-3. [javascript](tkolok/oktatas/javascript)
-4. [react](tkolok/oktatas/react)
-5. [altalanos](tkolok/oktatas/altalanos)
+2. [css](/css)
+3. [javascript](/javascript)
+4. [react](/react)
+5. [altalanos](/altalanos)
 
 Aki csak a programozásba kóstolna bele, annak a következőket ajánlom a menüről:
-1. [javascript](tkolok/oktatas/javascript)
-2. [altalanos](tkolok/oktatas/altalanos)
+1. [javascript](/javascript)
+2. [altalanos](/altalanos)
