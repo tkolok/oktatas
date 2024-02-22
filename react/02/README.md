@@ -1,4 +1,4 @@
-# 7. Óra
+# React 2. fogás
 
 ## Interakciók kezelése
 

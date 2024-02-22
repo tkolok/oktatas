@@ -1,4 +1,4 @@
-# 6. Óra
+# React 1. fogás
 
 ## [React](https://react.dev/)
 

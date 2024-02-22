@@ -1,4 +1,4 @@
-# 3. Óra
+# JavaScript 3. fogás
 
 ## [Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) (függvények)
 

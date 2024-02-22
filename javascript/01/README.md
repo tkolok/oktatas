@@ -1,4 +1,4 @@
-# 1. Óra
+# JavaScript 1. fogás
 
 ## Bevezetés
 
@@ -8,15 +8,14 @@ a JavaScript) olyan programozási nyelvek, amiket széleskörűen fel lehet hasz
 
 ## "Fejlesztői környezet" megnyitása
 
-- [Google Chrome](https://www.google.com/chrome) / [Microsoft Edge](https://www.microsoft.com/edge): Kattints az egér jobb gombjával a weboldal bármely elemére,
-  majd válaszd a Vizsgálat/Inspect lehetőséget. Válaszd a Konzol/Console fület.
+- [Google Chrome](https://www.google.com/chrome) / [Microsoft Edge](https://www.microsoft.com/edge): Kattints az egér jobb gombjával a weboldal bármely elemére, majd válaszd a Vizsgálat/Inspect lehetőséget.
+  Válaszd a Konzol/Console fület.
 - [Mozilla Firefox](https://www.mozilla.org/firefox): Tools > Web Developer > Web Developer Tools. Válaszd a Konzol/Console fület.
 
 ## Data types (Típusok)
 
-Megkülönböztetjük az adatokat az alapján, hogy milyen adatatot szeretnénk tárolni. Két családba sorolhatjuk a típusokat:
-[primitve](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) (egyszerű) és reference (összetett, referencia alapú). Először rágjuk át magunkat az
-egyszerű típusokon.
+Megkülönböztetjük az adatokat az alapján, hogy milyen adatatot szeretnénk tárolni. Két családba sorolhatjuk a típusokat: [primitve](https://developer.mozilla.org/en-US/docs/Glossary/Primitive) (egyszerű) és reference
+(összetett, referencia alapú). Először rágjuk át magunkat az egyszerű típusokon.
 
 ### [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) (szám)
 

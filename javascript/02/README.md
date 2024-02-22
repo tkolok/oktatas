@@ -1,4 +1,4 @@
-# 2. Óra
+# JavaScript 2. fogás
 
 ## [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) -
 Az `if` utasítás célja, hogy bizonyos utasításokat csak akkor futtassunk meg, ha egy logikai kifejezés értéke `true`. Egyfajta kód elágaztatás. Az `else` ágban

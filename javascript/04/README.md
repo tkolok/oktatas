@@ -1,4 +1,4 @@
-# 4. Óra
+# JavaScript 4. fogás
 
 ## [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) (osztályok)
 
