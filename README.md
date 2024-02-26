@@ -5,12 +5,12 @@ Ezt a repositoryt leginkább azoknak ajánlom, akik érdeklődnek a weboldal ké
 megismerkedni a programozással.
 
 Aki weboldal készítésén töri a fejét, annak a következő sorrendben ajánlom a felkínált fogásokat:
-1. [html](/html)
-2. [css](/css)
-3. [javascript](/javascript)
-4. [react](/react)
-5. [altalanos](/altalanos)
+1. [html](/html) (1 fogás)
+2. [css](/css) (0 fogás)
+3. [javascript](/javascript) (4 fogás)
+4. [react](/react) (2 fogás)
+5. [általános](/altalanos) (0 fogás)
 
 Aki csak a programozásba kóstolna bele, annak a következőket ajánlom a menüről:
-1. [javascript](/javascript)
-2. [altalanos](/altalanos)
+1. [javascript](/javascript) (2 fogás)
+2. [általános](/altalanos) (0 fogás)
