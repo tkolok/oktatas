@@ -1,11 +1,5 @@
 # JavaScript 1. fogás
 
-## Bevezetés
-
-Az informatika önálló tudományág, amely a különböző eszközökkel – de különösen a számítógéppel – megvalósított információkezeléssel, azaz az információ
-megszerzésével, gyűjtésével, feldolgozásával, tárolásával, sokszorosításával és továbbításával foglalkozik. Az általános célú programozási nyelvek (esetünkben
-a JavaScript) olyan programozási nyelvek, amiket széleskörűen fel lehet használni szoftverek írására.
-
 ## "Fejlesztői környezet" megnyitása
 
 - [Google Chrome](https://www.google.com/chrome) / [Microsoft Edge](https://www.microsoft.com/edge): Kattints az egér jobb gombjával a weboldal bármely elemére, majd válaszd a Vizsgálat/Inspect lehetőséget.
@@ -24,7 +18,7 @@ Például: `5`, `12.5`, `-87`.
 
 ### [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) (karakterlánc)
 
-Ezekre úgy gondoljunk, min egyszerű szöveges adatra. Ezeket `'` vagy `"` jelek közé kell írni.  
+Ezekre úgy gondoljunk, mint egyszerű szöveges adatra. Ezeket `'` vagy `"` jelek közé kell írni.  
 Például: `'alma'`, `"Körte"`, `"123"`.
 
 ### [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
@@ -64,7 +58,8 @@ A változók adatok tárolására szolgáló nevesített konténerek. Egy válto
 tárolhatunk.  
 Képzeljük el, hogy a konyhánkban rengeteg fűszeres doboz van és mindegyik címkéjén más áll (só, bors, stb.). Bármelyikbe tehetünk bármilyen fűszert (adatot), a
 címke csak javaslat. Csak rajtunk áll, hogy melyikbe mit teszünk, és mikor használjuk fel a tartalmát. Viszont sosem a doboz tartalma alapján fogunk hivatkozni
-egy fűszeres dobozra, hanem a címkéje (neve) alapján. Nagyjából így működnek a változók is.  
+egy fűszeres dobozra, hanem a címkéje (neve) alapján. Például: "Erzsike! Ideadnád a kakaós dobozt, tudod, amelyikben a babérlevelek vannak?". Nagyjából így
+működnek a változók is.  
 A gyakorlatban a következő módon hozunk létre egy változót:
 
 ```javascript
@@ -117,8 +112,8 @@ Az 1. sorban értéket adtunk az `a` változónak. A 2. sorban először lekérd
 
 > A [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) és
 > [`var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var) kulcsszavakkal is hasonló módon hozhatunk létre változókat. Van
-> eltérés a változók viselkedésében attól függően, hogy milyen módon hoztuk őket létre, de az nem része ennek a "tananyagnak". Az egyszerűség kedvéért a
-> továbbiakban a `let`-es változatot fogom használni.
+> eltérés a változók viselkedésében attól függően, hogy milyen módon hoztuk őket létre, de az nem része ennek a fogásnak. Az egyszerűség kedvéért a továbbiakban
+> a `let`-es változatot fogom használni.
 
 ## Reference types (összetett, referencia alapú típusok)
 
