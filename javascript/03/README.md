@@ -50,7 +50,7 @@ működésük teljes mértékben megegyezik.
 A `return` kulcsszó után a function futása véget ér, és a function visszatér a `return` után álló értékkel. JavaScriptben ha ez az érték nincs definiálva, vagy
 a function nem fut bele `return` utasításba, akkor `undefined` értékkel tér vissza a function.
 
-### Paraméterek
+### [Paraméterek](https://developer.mozilla.org/en-US/docs/Glossary/Parameter)
 
 Egy functionnek akárhány paramétere lehet, melyeket vesszővel választunk el. Ezeket úgy kell elképzelni, mint egyszerű blokk szintű változókat, amelyek csak a
 function törzsén belül léteznek. JavaScriptben lehetőség van
