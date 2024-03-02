@@ -43,9 +43,32 @@ let multiply2 = (a, b) => a * b;
 
 A fentebbi példában létrehoztunk 3 functiont. Mindegyik egy két paraméteres function. A `sum` function össze fogja adni a paraméterként kapott számokat. A
 `multiply1` és a `multiply2` functionök pedig össze fogják szorozni a paramétereket. A `multiply2` function egy rövidített változata a `multiply1` function,
-működésük teljes mértékben megegyezik. A [`return`](#return) kulcsszót kicsit lentebb tárgyaljuk.
+működésük teljes mértékben megegyezik.
 
-### Function meghívása -
+### [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
+
+A `return` kulcsszó után a function futása véget ér, és a function visszatér a `return` után álló értékkel. JavaScriptben ha ez az érték nincs definiálva, vagy
+a function nem fut bele `return` utasításba, akkor `undefined` értékkel tér vissza a function.
+
+### Paraméterek
+
+Egy functionnek akárhány paramétere lehet, melyeket vesszővel választunk el. Ezeket úgy kell elképzelni, mint egyszerű blokk szintű változókat, amelyek csak a
+function törzsén belül léteznek. JavaScriptben lehetőség van
+[default értéket](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) megadni egy paraméternek. Ha a function
+meghívásakor a paraméter értéke nincs megadva, vagy `undefined`, akkor a default értéket fogja a paraméter tartalmazni. Ezen kívül lehetőség van
+[rest paraméter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) megadására is, mely célja, hogy nem meghatározott
+számú paramétert is át tudjunk adni egy functionnek. A rest paraméter típusa tömb.  
+A paraméter típusától függően kétféle módon adhatjuk át őket a functionnek. Érték szerint az egyszerű típusokat (string, boolean, number, stb.) és referencia
+szerint az összetett típusokat (object, array). Ezeket úgy kell elképzelni, mintha egy fájlt szeretnénk megosztani. Az érték szerinti átadás esetében ez olyan,
+mintha a fájlt átküldenénk a másik fél számára, így mind a kettőnk számítógépén ott lesz a fájl. Ha az egyikünk módosítja a saját példányát, az nem lesz
+kihatással a másik példányára. A referencia szerinti átadás esetében úgy kell elképzelni ezt, minta a felhőben osztanánk meg egymással a fájlt. Egyetlen egy
+példány létezik a fájlból, és ha az egyikünk módosítja, akkor a másik is látni fogja a módosításokat. Így, ha egy paraméterként kapott stringet módosítunk a
+functionön belül, akkor az nem lesz kihatással az eredeti stringre, de ha egy objektum paramétert módosítunk, akkor az eredeti objektum is módosulni fog (hiszen
+a két objektum ugyanaz). (Sajnos erre nem találtam konyhai példát. :disappointed: )
+
+### Function meghívása
+
+A function meghívásakor lefuttatjuk a function törzsében található kódrészletet azokkal a paraméterekkel, amiket átadtunk a function meghívásakor.
 
 #### Szintaxis
 
@@ -60,34 +83,18 @@ sum1(1, 2);
 sum2(3, sum3(4, 5));
 ```
 
-### [return](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
+### Functionök működés közben
 
-A `return` kulcsszó után a function futása véget ér, és a function visszatér a `return` után álló értékkel. Ha ez az érték nincs definiálva, vagy a function nem
-fut bele `return` utasításba, akkor `undefined` értékkel tér vissza a function.
-
-### Paraméterek
-
-Egy functionnek akárhány paramétere lehet, melyeket vesszővel választunk el. Ezeket úgy kell elképzelni, mint egyszerű blokk szintű változókat, amelyek csak a
-function törzsén belül léteznek. JavaScriptben lehetőség van
-[default értéket](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) megadni egy paraméternek. Ha a function
-meghívásakor a paraméter értéke `undefined`, akkor `undefined` helyett a default értéket fogja a paraméter tartalmazni. Ezen kívül lehetőség van
-[rest paraméter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) megadására is, mely célja, hogy nem meghatározott
-számú paramétert is át tudjunk adni egy functionnek. A rest paraméter típusa tömb.
-
-A paraméter típusától függően kétféle módon adhatjuk át őket a functionnek. Érték szerint az egyszerű típusokat (string, boolean, number, stb.) és refencia
-szerint az összetett típusokat (object, array). Ezeket úgy kell elképzelni, mintha egy fájlt szeretnénk megosztani. Az érték szerinti átadás esetében ez olyan,
-mintha a fájlt átküldenénk a másik fél számára, így mind a kettőnk számítógépén ott lesz a fájl. Ha az egyikünk módosítja a saját példányát, az nem lesz
-kihatással a másik példányára. A referencia szerinti átadás esetében úgy kell elképzelni ezt, minta a felhőben osztanánk meg egymással a fájlt. Egyetlen egy
-példány létezik a fájlból, és ha az egyikünk módosítja, akkor a másik is látni fogja a módosításokat. Így, ha egy paraméterként kapott stringet módosítunk a
-functionön belül, akkor az nem lesz kihatással az eredeti stringre, de ha egy objektum paramétert módosítunk, akkor az eredeti objektum is módosulni fog (hiszen
-a két objektum ugyanaz). (Sajnos erre nem találtam konyhai példát. :disappointed: )
+Vegyük az alábbi kódrészletet és elmezzük ki, hogy mi történik az egyes sorokban.
 
 ```javascript
 function multiply(a, b = 1) { // b változó default értéke 1
     return a * b;
 }
 
+mutliply(3, 5); // 15
 mutliply(5); // 5
+mutliply(5, mutliply(4, 3)); // 60
 
 function list(...params) { // rest paraméter
     for (let i = 0; i < params.length; i++) {
@@ -97,6 +104,18 @@ function list(...params) { // rest paraméter
 
 list(5, 'alma', null, true, {name: 'Jóska'});
 ```
+
+Először is definiáltuk a `mutliply` functiont, amely 2 paramétert vár `a`-t és `b`-t. Ha a `b` nincs megadva, akkor annak az értéke `1` lesz. Maga a `mutliply`
+function a két szám szorzatával tér vissza.  
+Ezután meghívtuk a `mutliply` functiont a `3` és `5` értékekkel. Ebben az esetben a `mutliply` törzsén belül az `a` értéke `3`, míg a `b`-é `5` lesz. A function
+törzsén belül összeszorozzuk a 2 számot, majd visszatérünk ennek az értékével, azaz `15`-tel.  
+Az ezt követő sorban a `mutliply` functiont csak egy paraméterrel hívjuk meg, `5`-tel. Mivel a `b` értéke nincs megadva, így az automatikusan felveszi a default
+értékét, azaz az `1`-t. Így az eredmény `5 * 1`, azaz (komoly számolások után) `5` lesz.  
+Ezután kétszer is meghívjuk a `mutliply` functiont. Először a belső function hívás fog megfutni, vagyis a `mutliply(4, 3)`, aminek az értéke `12` lesz. Ez az
+érték kerül majd a külső function hívás `b` paraméterébe, tehát a külső function hívás a behelyettesítés után így néz ki: `mutliply(5, 12)`. Így a végeredmény
+`60`.  
+Végül létrehozunk egy `list` nevű functiont, amely rest paramétert tartalmaz. Mivel a rest paraméter egy tömb, ezért a function törzsében a összes elemnén
+végighaladunk, majd kiíratjuk azokat.
 
 ## [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) functions
 
@@ -195,6 +214,8 @@ A `separator` alapján feldarabolja a stringet.
 ```
 
 ## [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) functions
+
+Végezetül nézzünk meg pár gyakran használt tömbökhöz tartozó beépített functiont.
 
 ### [.forEach(callbackfn)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
