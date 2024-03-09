@@ -1,8 +1,8 @@
 > Megjegyzés: Folyamatos fejlesztés alatt. 
 
 # Ínycsiklandó kezdő receptek weboldalak kotyvasztásához
-Ezt a repositoryt leginkább azoknak ajánlom, akik érdeklődnek a weboldal készítés iránt, de azok is találhatnak itt ínyükre valót, akik szeretnének
-megismerkedni a programozással.
+Ezt a repositoryt leginkább azoknak ajánlom, akik érdeklődnek a weboldal készítés iránt, de azok is találhatnak itt ínyükre valót, akik csak a programozással
+szeretnének megismerkedni.
 
 Aki weboldal készítésén töri a fejét, annak a következő sorrendben ajánlom a felkínált fogásokat:
 1. [html](/html) (1 fogás)
