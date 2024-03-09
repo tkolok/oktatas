@@ -3,10 +3,10 @@
 ## [Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions) (függvények)
 
 A functionök nem mások, mint újrafelhasználható paraméterezhető utasítás blokkok, amelyek a paraméterektől függően csinálnak valamit.  
-A functionökre gondoljunk úgy, mintha konyhai műveletek lennének, például főzés. Általában hogyan hajtjuk végre a főzést? Fogunk egy edényt, vizet engedünk
-bele, felforraljuk a vizet, az edénybe tesszük a főzésre váró ételt, néha megkavarjuk. De ez nem mindig van így. Az ételtől függ, hogy mennyi ideig főzzük, hogy
-kell-e kavargatni, hogy vizet forralunk-e, és így tovább. Ezek a változó dolgok lesznek a function (jelen esetben a főzés) paraméterei. Az eredménye viszont
-mindig egy megfőzött étel lesz.
+A functionökre gondoljunk úgy, mintha konyhai műveletek lennének, például egy alapanyag felvágása. Általában hogyan vágunk fel valamit? Keresünk egy lapos
+felületet, elővesszük a kést, az alapanyagot, majd felvágjuk kisebb darabokra. De az alapanyag lehet zöldség, gyümölcs, hús. Felvághatjuk csíkokra, kockákra,
+vagy csak félbe vágjuk. Ezek a változó dolgok lesznek a function (jelenesetben a felvágás) paraméterei. Az eredmény viszont mindig ugyanaz lesz, egy darabokba
+vágott étel.
 
 ### Function létrehozás
 
