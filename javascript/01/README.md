@@ -134,6 +134,15 @@ Az 1. sorban értéket adtunk az `a` változónak. A 2. sorban először lekérd
 > eltérés a változók viselkedésében attól függően, hogy milyen módon hoztuk őket létre, de az nem része ennek a fogásnak. Az egyszerűség kedvéért a továbbiakban
 > a `let`-es változatot fogom használni.
 
+### Változó névadás
+
+Konvencíó szerint JavaScriptben a változók neveit [camel case](https://developer.mozilla.org/en-US/docs/Glossary/Camel_case) formátumban írjuk, azaz az első szó
+minden betűjét kisbetűsen írjuk, míg a többi szó első betűjét nagybetűvel, a többit kicsivel, és egybeírjuk a szavakat. Például: `userName`, `isHidden`,
+`veryLongVariableName`. Lehetőleg mindig olyan változó nevet adjunk, ami rövid és jól leírja, hogy az adott változóban mit tárolunk, és kerüljük az `a` és
+hasonló neveket, ezzel is növelve a kód olvashatóságát.
+
+![Változó név választás](/assets/variable-name.png)
+
 ## Reference types (összetett, referencia alapú típusok)
 
 Miután megismerkedtünk a literálokkal, változókkal és az egyszerű típusokkal, harapjunk bele az összetett típusokba is.
