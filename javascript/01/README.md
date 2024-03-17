@@ -60,6 +60,9 @@ Például: `5`, `12.5`, `-87`.
 Ezekre úgy gondoljunk, mint egyszerű szöveges adatra. Ezeket `'` vagy `"` jelek közé kell írni.  
 Például: `'alma'`, `"Körte és citrom"`, `"123"`.
 
+> Továbbá létezik a [template literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) is, ami valamivel több funkcióval
+> rendelkezik, mint egy egyszerű string. Jelölése a `` ` ``.
+
 ### [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
 
 A boolean nem más, mint igazságértéket tartalmazó adat. Egy ilyen adat csak 2 értéket vehet fel: `true` (igaz) vagy `false` (hamis).
