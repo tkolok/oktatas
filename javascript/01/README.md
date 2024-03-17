@@ -138,8 +138,12 @@ Az 1. sorban értéket adtunk az `a` változónak. A 2. sorban először lekérd
 
 Konvenció szerint JavaScriptben a változók neveit [camel case](https://developer.mozilla.org/en-US/docs/Glossary/Camel_case) formátumban írjuk, azaz az első szó
 minden betűjét kisbetűsen írjuk, míg a többi szó első betűjét nagybetűvel, a többit kicsivel, és egybeírjuk a szavakat. Például: `userName`, `isHidden`,
-`veryLongVariableName`. Lehetőleg mindig olyan változó nevet adjunk, ami rövid és jól leírja, hogy az adott változóban mit tárolunk, és kerüljük az `a` és
-hasonló neveket, ezzel is növelve a kód olvashatóságát.
+`veryLongVariableName`. Lehetőleg mindig olyan változó nevet adjunk, ami elsősorban jól leírja, hogy az adott változóban mit tárolunk, másodsorban pedig ha
+lehet, akkor legyen rövid. Mindenképpen kerüljük az `a` és hasonló neveket, amelyek semmilyen információt nem árulnak el a változó tartalmáról, ezzel is növelve
+a kód olvashatóságát, értelmezhetőségét.
+
+> A rövidebb példáimban sokszor használok `a` és hasonló változó neveket. Ezek csak a könnyebb átláthatóságot szolgálják, az ilyen változó nevek továbbra is
+> __KERÜLENDŐK__. 
 
 ![Változó név választás](/assets/variable-name.png)
 
@@ -221,59 +225,193 @@ a.age;
 
 ## Operators (Operátorok)
 
-- Arithmetic operators:
-    - `a + b`: Összeadja a két operandus értéket.
-      ```javascript
-      let a = 5 + 2; // 7
-      ```
-    - `a - b`: Kivonja a jobb operandus értékét a bal oldali operandusból.
-      ```javascript
-      let a = 5 - 2; // 3
-      ```
-    - `a * b`: Összeszorozza a két operandus értékét.
-      ```javascript
-      let a = 5 * 2; // 10
-      ```
-    - `a / b`: A bal oldali operadnus értékét elosztja a jobb oldali operandus értékével.
-      ```javascript
-      let a = 5 / 2; // 2.5
-      ```
-    - `a % b`: Maradékos osztás.
-      ```javascript
-      let a = 5 % 2; // 1
-      ```
-    - `a++`: Eggyel növelő az operandus értékét.
-      ```javascript
-      let a = 5;
-      a++; // 6
-      ```
-    - `a--`: Eggyel csökkenti az operandus értékét.
-      ```javascript
-      let a = 5;
-      a--; // 4
-      ```
-- Assignment operators: `=`, `+=`, `-=`, `*=`, `/=`, `%=`
-- Comparison operators: `==`, `===`, `!=`, `!==`, `>`, `<`, `>=`, `<=`
-- Logical operators:
-    - `a && b`: Csak akkor igaz, ha mind a két operandus igaz.
-      ```javascript
-      true && true; // true
-      true && false; // false
-      false && true; // false
-      false && false; // false
-      ```
-    - `a || b`: Csak akkor hamis, ha mind a két operandus hamis.
-      ```javascript
-      true || true; // true
-      true || false; // true
-      false || true; // true
-      false || false; // false
-      ```
-    - `!a`: Megfordítja az operandus értékét.
-      ```javascript
-      !true; // false
-      !false; // true
-      ```
+Az operátorok megértése egyszerű, mint a tojásrántotta, így mindenféle komolyabb bevezető nélkül lássuk a leggyakrabban használt operátorokat.
+
+### [Increment and decrement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#increment_and_decrement) (Növelés és csökkentés)
+
+- [`++`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment): Eggyel növeli a változó értékét.
+  ```javascript
+  let a = 5;
+  a++; // 6
+  ```
+- [`--`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Decrement): Eggyel csökkenti a változó értékét.
+  ```javascript
+  let a = 5;
+  a--; // 4
+  ```
+
+### [Arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#arithmetic_operators) (Aritmetikai operátorok)
+
+Az aritmetikai operátorok ugyanúgy működnek, mint ahogy azt megtanultuk az álalános iskolában.
+
+- [`+`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition): Összeadja a két értéket. Ha két [stringet](#string-karakterlánc)
+  adunk össze, akkor összefűzi őket.
+  ```javascript
+  let a = 5 + 2;             // 7
+  let b = 'kecske' + 'sajt'; // 'kecskesajt'
+  ```
+- [`-`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Subtraction): Kivonja a jobb oldali értékét a bal oldali értékből.
+  ```javascript
+  let a = 5 - 2; // 3
+  ```
+- [`*`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Multiplication): Összeszorozza a két értékét.
+  ```javascript
+  let a = 5 * 2; // 10
+  ```
+- [`/`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Division): A bal oldali értékét elosztja a jobb oldali értékkel.
+  ```javascript
+  let a = 5 / 2; // 2.5
+  ```
+- [`%`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder): Visszaadja az osztás maradékát.
+  ```javascript
+  let a = 5 % 2; // 1
+  ```
+
+> Természetesen a zárójelek használata is ugyanúgy működik, mint ahogy azt az általános iskolában tanultuk. Például: `(4 + 3) * 2; // 14`.
+
+### [Assignment operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#assignment_operators) (Hozzárendelési operátorok)
+
+A hozzárendelési operátorok bal oldalán mindig egy változó áll, amelynek az új értéke a jobb oldalon lévő érték lesz.
+
+- [`=`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment): A jobb oldali érték lesz a változó új értéke.
+  ```javascript
+  let a = 12;
+  a = 5;
+  a; // 5
+  ```
+- [`+=`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment): A jobb oldalon lévő értékkel növeli a változó
+  értékét.
+  ```javascript
+  let a = 12;
+  a += 5;
+  a; // 17
+  ```
+- [`-=`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Subtraction_assignment): A jobb oldalon lévő értékkel csökkenti a változó
+  értékét.
+  ```javascript
+  let a = 12;
+  a -= 5;
+  a; // 7
+  ```
+- [`*=`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Multiplication_assignment): A jobb oldalon lévő értékkel szorozza a változó
+  értékét.
+  ```javascript
+  let a = 12;
+  a *= 5;
+  a; // 60
+  ```
+- [`/=`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Division_assignment): A jobb oldalon lévő értékkel osztja a változó
+  értékét.
+  ```javascript
+  let a = 12;
+  a /= 4;
+  a; // 3
+  ```
+- [`%=`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder_assignment): A jobb oldalon lévő értékkel "maradékos osztja" a
+  változó értékét.
+  ```javascript
+  let a = 12;
+  a %= 5;
+  a; // 2
+  ```
+
+### [Relational operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#relational_operators) (Relációs operátorok)
+
+A relációs operátorok egy [`boolean`](#boolean) értéket fognak visszaadni attól függően, hogy mi a vizsgálat eredménye.
+
+- [`===`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality): Megvizsgálja, hogy a két oldalon lévő érték egyenlő-e.
+  Ennek vizsgálatnak a megengedőbb változata a [`==`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality), aminek a
+  használatát érdemes kerülni.  
+  ```javascript
+  true === true;           // true
+  true === false;          // false
+  true === 1;              // false
+  true === 'pogácsa';      // false
+  false === false;         // true
+  false === 1;             // false
+  false === 'pogácsa';     // false
+  12 === 12;               // true
+  5 === 7;                 // false
+  30 === '30';             // false
+  'pogácsa' === 'pogácsa'; // true
+  'POGÁCSA' === 'pogácsa'; // false
+  undefined === undefined; // true
+  undefined === false;     // false
+  ```
+- [`!==`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_inequality): Megvizsgálja, hogy a két érték egyenlőtlen-e. Igazából
+  az `===` operátor értékének az ellentétét fogja visszaadni. Hasonlóan a `===` operátorhoz, ennek is van egy megengedőbb változata, a
+  [`!=`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Inequality), amit szintén érdemes kerülni.
+  ```javascript
+  true !== true;           // false
+  true !== false;          // true
+  true !== 1;              // true
+  true !== 'pogácsa';      // true
+  false !== false;         // false
+  false !== 1;             // true
+  false !== 'pogácsa';     // true
+  12 !== 12;               // false
+  5 !== 7;                 // true
+  30 !== '30';             // true
+  'pogácsa' !== 'pogácsa'; // false
+  'POGÁCSA' !== 'pogácsa'; // true
+  undefined !== undefined; // false
+  undefined !== false;     // true
+  ```
+- [`>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Greater_than): Megvizsgálja, hogy a bal oldali érték nagyobb-e, mint a jobb
+  oldali érték.
+  ```javascript
+  10 > 5;  // true
+  10 > 10; // false
+  10 > 15; // false
+  ```
+- [`<`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Less_than): Megvizsgálja, hogy a bal oldali érték kisebb-e, mint a jobb
+  oldali érték.
+  ```javascript
+  10 < 5;  // false
+  10 < 10; // false
+  10 < 15; // true
+  ```
+- [`>=`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Greater_than_or_equal): Megvizsgálja, hogy a bal oldali érték nagyobb, vagy
+  egyenlő, mint a jobb oldali érték.
+  ```javascript
+  10 >= 5;  // true
+  10 >= 10; // true
+  10 >= 15; // false
+  ```
+- [`<=`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Less_than_or_equal): Megvizsgálja, hogy a bal oldali érték kisebb, vagy
+  egyenlő, mint a jobb oldali érték.
+  ```javascript
+  10 <= 5;  // false
+  10 <= 10; // true
+  10 <= 15; // true
+  ```
+
+### [Logical operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#binary_logical_operators) (Logikai operátorok)
+
+Az alábbi operátorok is mindig egy [boolean](#boolean) értékkel fognak visszatérni.
+
+- [`&&`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND): Csak akkor igaz, ha mind a két érték igaz.
+  ```javascript
+  true && true;           // true
+  true && false;          // false
+  false && true;          // false
+  false && false;         // false
+  (10 < 12) && (12 < 15); // true
+  ```
+- [`||`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR): Csak akkor hamis, ha mind a két érték hamis.
+  ```javascript
+  true || true;          // true
+  true || false;         // true
+  false || true;         // true
+  false || false;        // false
+  (10 < 8) || (10 < 20); // true
+  ```
+- [`!`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_NOT): Megfordítja (negálja) az operandus értékét.
+  ```javascript
+  !true;     // false
+  !false;    // true
+  !(10 > 8); // false
+  ```
 
 ## Kiíratás
 
