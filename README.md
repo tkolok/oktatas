@@ -12,5 +12,5 @@ Aki weboldal készítésén töri a fejét, annak a következő sorrendben aján
 5. [általános](/altalanos) (0 fogás)
 
 Aki csak a programozásba kóstolna bele, annak a következőket ajánlom a menüről:
-1. [javascript](/javascript) (2 fogás)
+1. [javascript](/javascript) (4 fogás)
 2. [általános](/altalanos) (0 fogás)
