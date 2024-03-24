@@ -1,17 +1,5 @@
 # JavaScript 1. fogás
 
-A [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) egy általános programozási nyelv. Az általános prpogramozási nyelveket általános
-problémák megoldására használjuk (micsoda fordulat), például egyszerűbb és bonyolultabb számítások elvégzésére, adatok szűrésére, rendezésére.  
-Két ok miatt választottam ezt a nyelvet a programozás bemutatásához. Először is, mert egy böngészőn és egy egyszerű szövegszerkesztőn kívül nincs szükség
-komplex alkalmazások letöltésére, ezek pedig szinte minden számítógépen elérhetőek. Másodszor pedig ebben dolgozom már évek óta.
-
-## A böngésző [fejlesztői környezetének](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/What_are_browser_developer_tools) megnyitása
-
-Ahhoz, hogy egy kódot futtatni tudjunk, szükség van egy úgynevezett fejlesztői környezetre. Ezt az alábbi módon érhetjük el:
-1. Kattintsunk az egér jobb gombjával a weboldal bármely elemére.
-2. Válasszuk a Vizsgálat/Inspect lehetőséget.
-3. Válasszuk a Konzol/Console fület.
-
 ## [Comments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#comments) (kommentek, megjegyzések)
 
 A kommentek nem befolyásolják a kód futását, ezek célja, hogy megjegyzéseket, dokumentációt fűzzünk a kódhoz. Például mit csinál a kód, ki készítette.  
@@ -143,7 +131,9 @@ Konvenció szerint JavaScriptben a változók neveit [camel case](https://develo
 minden betűjét kisbetűsen írjuk, míg a többi szó első betűjét nagybetűvel, a többit kicsivel, és egybeírjuk a szavakat. Például: `userName`, `isHidden`,
 `veryLongVariableName`. Lehetőleg mindig olyan változó nevet adjunk, ami elsősorban jól leírja, hogy az adott változóban mit tárolunk, másodsorban pedig ha
 lehet, akkor legyen rövid. Mindenképpen kerüljük az `a` és hasonló neveket, amelyek semmilyen információt nem árulnak el a változó tartalmáról, ezzel is növelve
-a kód olvashatóságát, értelmezhetőségét.
+a kód olvashatóságát, értelmezhetőségét.  
+Fontos még megjegyezni, hogy a programozás "nyelve" az angol, így mindig angol nyelvű változókat adjunk. Mi se örülnénk annak, ha például indiai váltózó
+nevekkel találkoznánk, és úgy kellene kitalálni, hogy mit csinál a kód.
 
 > A rövidebb példáimban sokszor használok `a` és hasonló változó neveket. Ezek csak a könnyebb átláthatóságot szolgálják, az ilyen változó nevek továbbra is
 > __KERÜLENDŐK__. 
@@ -211,19 +201,71 @@ a.length; // 3
 
 ### [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) (objektum)
 
+Az objektumok olyan adatszerkezetek, amelyek a logikailag összetartozó adatokat egységbe zárják. Például egy ételnek van neve, receptje, elkészítési ideje,
+hozzávalói, stb., de ilyen példa lehet még egy lakcím is, amihez tartozik irányítószám, település, utca, házszám. Lényegében logikailag összetartozó egyszerű
+típusú adatokat tartalmaz egy objektum. Létrehozni a `{}` jelöléssel lehet.
+
+```javascript
+let a = {};
+```
+
+Ha szeretnénk adatot tárolni egy objektumban, akkor egy kulcs-érték párt kell felvennünk az alábbi formában: `<kulcs>: <érték>`. A kulcs egy olyan egyedi
+[property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#properties) (azonosító) lesz, amivel az objektumon belül tudunk hivatkozni
+egy értékre. Ha több ilyen kulcs-érték párt szeretnénk felvenni, akkor (a tömbhöz hasonlóan) `,`-vel kell elválasztani őket.
+
+```javascript
+let pancake = {
+    cookingTime: 20,
+    ingredients: ['liszt', 'olaj', 'só', 'tej', 'tojás'],
+    name: 'palacsinta'
+};
+```
+
+Szerintem a fentebbi kód részlet magáért beszél. Létrehoztunk egy `pancake` nevű objektumot, aminek a főzési ideje (`cookingTime`) 20 perc, a hozzávalói
+(`ingredients`) liszt, olaj, só, tej, tojás, és a neve (`name`) palacsinta. Ahogy látható az `ingredients` egy tömb. Tehát egy objektum egy értéke akár egy tömb
+is lehet, de akár egy másik objektum is. Ez fordítva is igaz, a tömb elemei is lehetnek objektumok, de akár tömbök is.
+
 ```javascript
 let a = {
-    address: {
-        city: 'Debrecen',
-        street: 'Piac utca'
-    },
-    firstname: 'József',
-    lastname: 'Példa'
+    parentName: 'parent',
+    parentArray: [5, 10, 15],
+    parentString: 'foo',
+    childObject: {
+        childName: 'child',
+        childArray: [3, 6, 9, 12],
+        childString: 'bar'
+    }
 };
-`${a.firstname} ${a.lastname}`;
-a.address.city;
-a.age = 99;
-a.age;
+```
+
+Ahhoz, hogy ki tudjuk olvasni egy objektum egy értékét, úgy az objektum neve után kell tennünk egy `.`-t, majd a kiolvasni kívánt kulcs nevét.
+
+```javascript
+a.parentName;   // 'parent'
+a.parentString; // 'foo';
+```
+
+Ha egy objektumon belüli objektum egy értékét szeretnénk kiolvasni, akkor csak össze kell fűznünk a logikát.
+
+```javascript
+a.childObject.childName;     // 'child'
+a.childObject.childString;   // 'bar'
+a.childObject.childArray[2]; // 9
+```
+
+Ha már létező objektumhoz szeretnénk új kulcs-érték párt hozzáadni, vagy egy korábbi kulcshoz új értéket rendelni, akkor elég a kulcs megnevezése után egy `=`
+jelet tennünk.
+
+```javascript
+let a = {
+    foo: 12
+};
+
+a.bar = 34;
+a.foo = 57;
+
+a.bar; // 34
+a.foo; // 57
 ```
 
 ## Operators (Operátorok)
