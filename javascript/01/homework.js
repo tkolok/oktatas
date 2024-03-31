@@ -18,7 +18,7 @@ let b = ((a % 2) === 0) && ((a % 5) === 0);
 let a = [1, 3, 5, 7, 9];
 let b = a[0] + a[1] + a[2] + a[3] + a[4];
 
-// Írj kód részletet, amelyben létrehozol 3 akármilyen változót, majd ezek értékét egy object típusú változóba lemented! Ezután irasd ki az objektum összes
+// Írj kód részletet, amelyben létrehozol 3 akármilyen változót, majd ezek értékét egy object típusú változóba lemented! Ezután írasd ki az objektum összes
 // attribútumát!
 let age = 20;
 let name = 'Icuka';

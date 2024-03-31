@@ -189,11 +189,11 @@ while (number < 10) {
 6. Írj kód részletet, amelyben létrehozol egy 5 elemű szám tömböt, majd kiíratod, hogy hányszor szerepelt a 4-es a tömbben!
 7. Írj kód részletet, amelyben létrehozol egy 5 elemű szám tömböt, majd az összes elemére kiíratod, hogy osztható 2-vel, 3-mal és 5-tel!
 8. Írj kód részletet, amelyben létrehozol egy 5 elemű szám tömböt, majd visszafelé kiíratod az elemeit!
-9. Írj kód részletet, amelyben létrehozol egy akárhány elemű akármilyen tömböt! Ha páros számú elem található benne, akkor előre felé irasd ki az elemeket,
+9. Írj kód részletet, amelyben létrehozol egy akárhány elemű akármilyen tömböt! Ha páros számú elem található benne, akkor előre felé írasd ki az elemeket,
    egyébként visszafelé!
-10. Írj kód részletet, amelyben kiíratod a 100-nál kisebb Fibonacci számokat!
+10. Írj kód részletet, amelyben kiíratod a 100-nál kisebb [Fibonacci számokat](https://hu.wikipedia.org/wiki/Fibonacci-sz%C3%A1mok)!
 11. Írj kód részletet, amelyben kiíratod egy 10 elemű tömb minden második elemét!
-12. Írj kód részletet, amelyben kiíratod létrehozol 2 darab 5 elemű szám tömböt, majd létrehozol egy üres tömböt! Az üres tömbbe a másik 2 tömb azonos indexű
-   elemeit összeadod!
-13. Írj kód részletet, amelyben létrehozol egy 3 elemű tömböt, amelynek minden eleme egy 3 elemű szám tömb! Irasd ki az összes elemét!
+12. Írj kód részletet, amelyben létrehozol 2 darab 5 elemű szám tömböt, majd létrehozol egy üres tömböt! Az üres tömbbe a másik 2 tömb azonos indexű elemeit add
+   össze!
+13. Írj kód részletet, amelyben létrehozol egy 3 elemű tömböt, amelynek minden eleme egy 3 elemű szám tömb! Írasd ki az összes elemét!
 14. Írj kód részletet, amelyben létrehozol egy üres tömböt! Ebbe addig teszel boolean értékeket, ameddig 10 elem lesz a tömbben!
