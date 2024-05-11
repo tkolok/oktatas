@@ -65,7 +65,10 @@ Nézzük meg soronként, hogy mi történik a fentebbi kódban. Ha a `rating` ki
 esetben (azaz a `rating` legalább `2`) tovább vizsgáljuk a `rating` értékét, és ha kisebb, vagy egyenlő, mint `3`, akkor a `result` értéke `'Átlagos'` lesz. Ha
 még ez a feltétel sem teljesül (tehát a `rating` legalább `4`), akkor a `result` értéke `'Remek'` lesz. Végül pedig kiírjuk, hogy milyen volt maga az étel.
 
-## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) -
+## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+
+A `switch` utasítás nagyon hasonló az `if` utasításhoz. Nagyjából úgy lehet elképzelni, mint sok egymásba ágyazott `if...else`. Célja, hogy a lehetséges
+kódblokkok közül csak a feltételnek megfelelő fusson le.
 
 ### Szintaxis
 
@@ -83,20 +86,44 @@ switch (<kifejezés>) {
 }
 ```
 
+Képzeljük el, hogy a családnak van egy hagyományőrző étele, amit minden ünnep alkalmával elkészítenek, de az adott ünneptől függően kicsit felturbózzák. Ha
+szülinap van, akkor tejszínhabot tesznek rá, ha bolondok napja, akkor jalapeño paprikával bolondítják meg, ha az újévet köszöntik, akkor pezsgővel öntik nyakon
+(elég fura ízlése van a családnak).
+
 ### Példa
 
 ```javascript
-switch (fruit) {
-    case 'alma':
-        console.log('Az alma egy gyümölcs');
+let ingredients = ['hús', 'zöldségek'];
+
+switch (holiday) {
+    case 'BIRTHDAY':
+        ingredients.push('tejszínhab');
         break;
-    case 'körte':
-        console.log('A körte latin neve pyrus');
+    case 'APRIL_FOOLS_DAY':
+        ingredients.push('jalapeño');
+        break;
+    case 'NEW_YEARS_EVE':
+        ingredients.push('pezsgő');
         break;
     default:
-        console.log('Szívesen csinálnék egy gyümölcssalátát!');
+        ingredients.push('só');
 }
+
+console.log('A családi étel mai hozzávalói:', ingredients);
 ```
+
+Lássuk, hogy mi történik az egyes sorokban. Először létrehozunk egy `ingredients` nevű tömböt, ami az étel elkészítéséhez szükséges hozzávalókat tartalmazza.
+Ezt a tömböt fogjuk bővíteni az adott ünnepnaptól függően. Megvizsgáljuk, hogy mi a `holiday` változó értéke. Ha az értéke `'BIRTHDAY'`, akkor az `ingredients`
+tömbbe felvesszük még a `'tejszínhab'`-ot is, mint hozzávaló, majd a `break` utasítás (lentebb ezt is tárgyalni fogjuk) segítségével kilépünk a `switch`
+utasítás blokkból. Ha a `holiday` értéke nem `'BIRTHDAY'`, akkor tovább folytatjuk a vizsgálatot, azaz megnézzük, hogy a `holiday` értéke `'APRIL_FOOLS_DAY'`-e.
+Ha az, akkor az `'jalapeño'` kerül a hozzávalók listájába, majd kilépünk a `switch`-ből. Ha még ez a feltétel sem teljesült volna, akkor megnézzük, hogy a
+`holiday` értéke vajon `'NEW_YEARS_EVE'`-e. Ha igen, akkor ezúttal a `'pezsgő'` kerül a listába. Ha a `holiday` értéke nem egyezik meg egyik értékkel sem, ami a
+`case` ágaknál van megadva (tehát a `holiday` értéke például `'GRADUATION_CEREMONY'`, `'MONDAY'`, `32`, `true`, vagy `null`), akkor a `default` ágban lévő
+utasítások fognak megfutni, vagyis jelen esetben a `'só'`-t hozzáadjuk az `ingredients` tömbhöz. Ahogy látható a `default` ág végén nincs `break`. Ez azért van,
+mert már amúgy is a `switch` blokk alján vagyunk, így felesleges külön kilépni a blokkból, hiszen enélkül is kilépünk. Végül pedig a képernyőre írjuk, hogy
+milyen hozzávalók kellenek az étel elkészítéséhez.
+
+Érdemes megjegyezni, hogy `case` ágból annyit vehetünk fel, amennyit nem szégyellünk, és a `default` ág nem kötelező, elhagyható.
 
 ## [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) -
 
