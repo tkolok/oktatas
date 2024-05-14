@@ -1,6 +1,7 @@
 # JavaScript 2. fogás
 
 ## [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+
 Az `if` utasítás célja, hogy bizonyos utasítások csak akkor fussanak meg, ha egy logikai kifejezés értéke `true`. Egyfajta kód elágaztatás. Az `else` ágban
 található utasítások pedig csak akkor futnak meg, ha a logikai kifejezés értéke `false`, de ezt nem kötelező megadni.  
 Az `if` a receptekben azok a részek, amikor azt olvashatjuk, hogy ízlésünk szerint tehetünk bele ezt-azt. Ha olyan kedvünk van, akkor teszünk bele, ha nem
@@ -68,21 +69,27 @@ még ez a feltétel sem teljesül (tehát a `rating` legalább `4`), akkor a `re
 ## [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 
 A `switch` utasítás nagyon hasonló az `if` utasításhoz. Nagyjából úgy lehet elképzelni, mint sok egymásba ágyazott `if...else`. Célja, hogy a lehetséges
-kódblokkok közül csak a feltételnek megfelelő fusson le.
+kódblokkok közül csak a feltételnek megfelelő fusson le. A `switch` 3 részből áll:
+
+- kifejezés: Ez lesz az az érték, amely alapján eldöntjük, hogy mely utasításokat szeretnénk végrehajtani.
+- `case` ág: Ha a `case` ághoz tartozó érték megegyezik a kifejezés értékével, akkor az adott `case` ághoz rendelt utasítások fognak megfutni. Egyszerre több
+  `case` ága is lehet egy `switch`-nek.
+- `default` ág: Ha egyik `case` ág értékével sem egyezett meg a kifejezés értéke, akkor a `default` ághoz rendelt utasítások fognak megfutni. Legfeljebb egy
+  `default` ága lehet egy `switch`-nek.
 
 ### Szintaxis
 
 ```
 switch (<kifejezés>) {
     case <érték 1>:
-        <utasítások>
+        // utasítások
         break;
     case <érték 2>:
-        <utasítások>
+        // utasítások
         break;
     ...
     default:
-        <utasítások>
+        // utasítások
 }
 ```
 
@@ -113,34 +120,84 @@ console.log('A családi étel mai hozzávalói:', ingredients);
 ```
 
 Lássuk, hogy mi történik az egyes sorokban. Először létrehozunk egy `ingredients` nevű tömböt, ami az étel elkészítéséhez szükséges hozzávalókat tartalmazza.
-Ezt a tömböt fogjuk bővíteni az adott ünnepnaptól függően. Megvizsgáljuk, hogy mi a `holiday` változó értéke. Ha az értéke `'BIRTHDAY'`, akkor az `ingredients`
-tömbbe felvesszük még a `'tejszínhab'`-ot is, mint hozzávaló, majd a `break` utasítás (lentebb ezt is tárgyalni fogjuk) segítségével kilépünk a `switch`
-utasítás blokkból. Ha a `holiday` értéke nem `'BIRTHDAY'`, akkor tovább folytatjuk a vizsgálatot, azaz megnézzük, hogy a `holiday` értéke `'APRIL_FOOLS_DAY'`-e.
-Ha az, akkor az `'jalapeño'` kerül a hozzávalók listájába, majd kilépünk a `switch`-ből. Ha még ez a feltétel sem teljesült volna, akkor megnézzük, hogy a
-`holiday` értéke vajon `'NEW_YEARS_EVE'`-e. Ha igen, akkor ezúttal a `'pezsgő'` kerül a listába. Ha a `holiday` értéke nem egyezik meg egyik értékkel sem, ami a
-`case` ágaknál van megadva (tehát a `holiday` értéke például `'GRADUATION_CEREMONY'`, `'MONDAY'`, `32`, `true`, vagy `null`), akkor a `default` ágban lévő
-utasítások fognak megfutni, vagyis jelen esetben a `'só'`-t hozzáadjuk az `ingredients` tömbhöz. Ahogy látható a `default` ág végén nincs `break`. Ez azért van,
-mert már amúgy is a `switch` blokk alján vagyunk, így felesleges külön kilépni a blokkból, hiszen enélkül is kilépünk. Végül pedig a képernyőre írjuk, hogy
-milyen hozzávalók kellenek az étel elkészítéséhez.
+Ezt a tömböt fogjuk bővíteni az adott ünnepnaptól függően.  
+A `switch`-ben megvizsgáljuk, hogy mi a `holiday` változó értéke. Ha az értéke `'BIRTHDAY'`, akkor az `ingredients` tömbbe felvesszük még a `'tejszínhab'`-ot
+is, mint hozzávaló, majd a `break` utasítás (lentebb ezt is tárgyalni fogjuk) segítségével kilépünk a `switch` utasítás blokkból.  
+Ha a `holiday` értéke nem `'BIRTHDAY'`, akkor tovább folytatjuk a vizsgálatot, azaz megnézzük, hogy a `holiday` értéke `'APRIL_FOOLS_DAY'`-e. Ha az, akkor az
+`'jalapeño'` kerül a hozzávalók listájába, majd kilépünk a `switch`-ből.  
+Ha még ez a feltétel sem teljesült volna, akkor megnézzük, hogy a `holiday` értéke vajon `'NEW_YEARS_EVE'`-e. Ha igen, akkor ezúttal a `'pezsgő'` kerül a
+listába.  
+Ha a `holiday` értéke nem egyezik meg egyik értékkel sem, ami a `case` ágaknál van megadva (tehát a `holiday` értéke például `'GRADUATION_CEREMONY'`,
+`'MONDAY'`, `32`, `true`, vagy `null`), akkor a `default` ágban lévő utasítások fognak megfutni, vagyis jelen esetben a `'só'`-t hozzáadjuk az `ingredients`
+tömbhöz. Ahogy látható a `default` ág végén nincs `break`. Ez azért van, mert már amúgy is a `switch` blokk alján vagyunk, így felesleges külön kilépni a
+blokkból, hiszen enélkül is kilépünk.  
+Végül pedig a képernyőre írjuk, hogy milyen hozzávalók kellenek az étel elkészítéséhez.
 
-Érdemes megjegyezni, hogy `case` ágból annyit vehetünk fel, amennyit nem szégyellünk, és a `default` ág nem kötelező, elhagyható.
+## [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
 
-## [for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for) -
+A `for` ciklus célja, hogy egy vagy több utasítást többször is megfuttassunk. 4 részre oszthatjuk a `for` ciklust:
+
+- kezdő érték: Itt olyan utasítások szerepelhetnek, amiket a `for` első megfutása előtt szeretnénk megvalósítani. Ebben a részben általában olyan változókat
+  szoktunk létrehozni, amelyek csak a `for` cikluson belül lesznek elérhetőek.
+- feltétel: A `for` ciklus addig fogja megismételni a törzsében lévő utasításokat, amíg a feltétel értéke `true`. Amint `false` a kifejezés értéke, a `for`
+  ciklus véget ér.
+- növelés: Ide olyan utasításokat helyezhetünk el, amik mindig megfutnak egy adott ciklus végét követően.
+- törzs: azon utasítások, amelyeket újra és újra végre szeretnénk hajtani.
 
 ### Szintaxis
 
 ```
-for (<változók deklarálása>; <feltételek>; <ciklusiteráció után megfutó utasítások>) {
-    <utasítások>
+for (<kezdő érték>; <feltétel>; <növelés>) {
+    // utasítások (törzs)
 }
 ```
+
+Erre egy jó példa, amikor olyan ételt főzünk, amihez időnként (mondjuk 5 percenként) hozzá kell adni egy alapanyagot.
 
 ### Példa
 
 ```javascript
-for (let i = 0; i < array.length; i++) {
-    console.log('A tömb ' + i + '. eleme ' + array[i] + '.');
+let ingredients = ['karalábé', 'hagyma', 'borsó'];
+
+for (let index = 0; index < ingredients.length; index++) {
+    console.log('Hozzáadjuk a(z) ' + (index + 1) + '. hozzávalót: ' + ingredients[index] + '.');
+    console.log('5 percig hagyjuk főni.');
 }
+
+console.log('Elkészült az étel. Jó étvágyat!');
+```
+
+Megint nézzük meg soronként, hogy mi történik. Egy `ingredients` nevű tömbben letároljuk, hogy milyen hozzávalókat szeretnénk majd hozzáadni. Jelen esetben 3
+alapanyagról van szó (`'karalábé'`, `'hagyma'`, `'borsó'`), így 3 elemű lesz a tömb.  
+A `for` ciklus inicializáló blokkjában a `let index = 0` kódrészletet találjuk. Ezzel létrehoztunk egy `index` nevű változót, ami csak a `for` cikluson belül
+fog létezni. A kezdeti értéke `0` (mert a tömbök indexelése 0-tól kezdődik).  
+A feltételnél a `index < ingredients.length` szerepel. Tehát a `for` ciklus addig ismétli az utasításokat, amíg az `index` értéke kisebb, mint az
+`ingredients.length`, vagyis amíg kisebb `3`-nál.  
+Végül még egy `index++` utasítást láthatunk, amely minden ciklus végén 1-gyel növeli az `index` értékét.  
+Belépünk a ciklusba. Ekkor még az `index` értéke `0`. A kiíratásnál behelyetessítünk mindent. Az `(index + 1)` értéke `1`, míg az `ingredients[index]` a 0.
+indexű tömb elemre fog mutatni, azaz a `'karalábé'`-ra. Így eredményül a konzolra azt írjuk ki, hogy `'Hozzáadjuk a(z) 1. hozzávalót: karalábé.'`. Ezután
+kiíratjuk a következő sort is: `'5 percig hagyjuk főni.'`. Ezzel véget is ért az adott ciklus. Viszont minden ciklus vége után megfut a `for` növelés része,
+jelen esetben az `index++`. Tehát 1-gyel növeltük az `index` értékét, ami most már `1`. Ezután újból kezdődik a ciklus.  
+Mielőtt az új ciklus futásba belekezdenénk megvizsgáljuk a kifejezésünket. `index < ingredients.length`, azaz `1 < 3`? `true`, ezért kezdődhet az új ciklus.
+Ugyanaz fog történni, mint az előző futásnál, annyi különbséggel, hogy az `index` értéke most már `1`. Így az `(index + 1)` értéke `2` lesz, míg az
+`ingredients[index]` értéke `'hagyma'`. Kiíratjuk a két `console.log` tartalmát, majd ismételten véget ért a ciklus. Ismételten megfut az `index++`, így most már
+`2` az `index` értéke.  
+A 3. ciklus megfutása előtt ismét kiértékeljük a `index < ingredients.length` kifejezést. `2 < 3`? `true`, ezért indulhat a 3. ciklus. Ahogy a korábbi ciklus
+esetén most is behelyettesítjük az `index` értékét mindenhova, így kapjuk az `(index + 1)` esetén a `3`-at, és `ingredients[index]` esetén a `'borsó'`-t. Ciklus
+végén ismét növeljük az `index` értékét, így már `3` az értéke.  
+A 4. futásnál ismét megvizsgáljuk, hogy `index < ingredients.length`. `3 < 3`? Hohó, 3 nem kisebb 3-nál, így a kifejezés értéke `false`. Tehát nem indul újabb
+ciklus, véget ért a `for`.  
+Ezt követően még kiírjuk a `for` utáni `console.log` tartalmát.  
+A konzolban a következő sorok fognak megjelenni a fentebbi kód lefutása után:
+
+```text
+Hozzáadjuk a(z) 1. hozzávalót: karalábé.
+5 percig hagyjuk főni.
+Hozzáadjuk a(z) 2. hozzávalót: hagyma.
+5 percig hagyjuk főni.
+Hozzáadjuk a(z) 3. hozzávalót: borsó.
+5 percig hagyjuk főni.
+Elkészült az étel. Jó étvágyat!
 ```
 
 ## [while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while) -
@@ -149,7 +206,7 @@ for (let i = 0; i < array.length; i++) {
 
 ```
 while (<feltételek>) {
-    <utasítások>
+    // utasítások
 }
 ```
 
@@ -168,7 +225,7 @@ while (number < 10) {
 
 ```
 do {
-    <utasítások>
+    // utasítások
 } while (<feltételek>);
 ```
 
