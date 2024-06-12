@@ -238,16 +238,74 @@ do {
 } while (number < 10);
 ```
 
-## [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break) -
+## [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
+
+A `break` arra szolgál, hogy egy adott ciklust (`for`, `while`, `do...while`) véglegesen lezárjunk. Egy cikluson belül kell elhelyezni, és amikor a kód eléri a
+`break` utasítást, akkor kilép a ciklusból.
+
+### Szintaxis
+
+```
+break;
+```
+
+Igen, ennyire egyszerű a szintaxisa.  
+Ez hasonló, amikor valaki a mikróban szeretne melegíteni valamit 5 percig, de a mikrót indokolatlanul sok időre állítja be. Ekkor vár 5 percet, majd saját
+kezűleg megállítja a mikrót.
+
+### Példa
 
 ```javascript
-let number = 0;
-while (true) {
-    console.log(number++);
-    if (number >= 10) {
+let initialMinutes = 42;
+
+for (let elapsedMinutes = 0; elapsedMinutes < initialMinutes; elapsedMinutes++) {
+    console.log('Az étel már ' + elapsedMinutes + ' perce melegszik.');
+
+    if (elapsedMinutes === 5) {
+        console.log('Kikapcsolom a mikrót.');
         break;
     }
 }
+
+console.log('A mikró leállt.');
+```
+
+Ismét nézzük meg soronként, hogy mi történik. Létrehoztunk 2 változót. Az `initialMinutes` jelenti, hogy hány percre állítottuk a mikrót, az `elapsedMinutes`
+pedig, hogy hány perc telt el a mikrózás kezdete óta. Létrehoztunk egy `for` ciklust, amely addig megy míg el nem érjük a beállított időt.  
+Belépünk a ciklusba, majd rögtön kiírjuk, hogy `'Az étel már 0 perce melegszik.'`. A következő lépésben megvizsgáljuk, hogy az `elapsedMinutes` értéke 5-e.
+Jelenleg `0` az értéke, így nem lépünk be az `if`-be. Több utasítás nincs, kezdődhet elölről.  
+Az `elapsedMinutes` értéke most már `1`, így a `'Az étel már 1 perce melegszik.'` szöveg kerül a konzolra. Ismét megvizsgáljuk, hogy az `elapsedMinutes` értéke
+5-e, de most sem annyi, így most is kihagyjuk az `if`-et.  
+Ez a folyamat folytatódik, míg az `elapsedMinutes` érétke `5` nem lesz. Ekkor végre belépünk az `if` törzsébe. Először kiírjuk a `'Kikapcsolom a mikrót.'`
+szöveget. Ezután a `break` utasításnak köszönhetően kilépünk a teljes `for` ciklusból, nem fut meg többször a ciklus magja. Végül még kiírjuk, hogy `'A mikró
+leállt.'`. Így a konzolon végül az alábbi sorokat láthatjuk:
+
+```text
+Az étel már 0 perce melegszik.
+Az étel már 1 perce melegszik.
+Az étel már 2 perce melegszik.
+Az étel már 3 perce melegszik.
+Az étel már 4 perce melegszik.
+Az étel már 5 perce melegszik.
+Kikapcsolom a mikrót.
+A mikró leállt.
+```
+
+Vajon mi történt volna, ha nem szerepel a kódban a `break` utasítást tartalmazó sor? Akkor ha már 5 perce melegítjük az ételt, akkor a konzolra kiírjuk, hogy
+`'Kikapcsolom a mikrót.'`, de a `for` ciklus futása valóban nem szakad meg, így végigvártuk volna, míg letelik az idő (és szénné ég az ételünk). Így a konzolban
+az alábbi sorokat látnánk:
+
+```text
+Az étel már 0 perce melegszik.
+Az étel már 1 perce melegszik.
+...
+Az étel már 5 perce melegszik.
+Kikapcsolom a mikrót.
+Az étel már 6 perce melegszik.
+Az étel már 7 perce melegszik.
+...
+Az étel már 41 perce melegszik.
+A mikró leállt.
 ```
 
 ## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue) -
