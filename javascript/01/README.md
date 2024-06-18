@@ -474,7 +474,15 @@ console.log('Szöveg', 150, true);
 
 1. Írj kód részletet, amelyben létrehozol 2 szám változót, majd ezek összegét letárolod egy új változóban!
 2. Írj kód részletet, amelyben létrehozol 2 akármilyen változót, majd azok értékeit megcseréled!
-3. Írj kód részletet, amelyben létrehozol egy szám változót, majd egy újabb változóban letárolod, hogy a szám osztható-e 2-vel és 5-tel!
-4. Írj kód részletet, amelyben létrehozol egy 5 számot tartalmazó tömböt, majd egy új változóban letárolod ezek összegét!
-5. Írj kód részletet, amelyben létrehozol 3 akármilyen változót, majd ezek értékét egy object típusú változóba lemented! Ezután írasd ki az objektum összes
-   attribútumát!
+3. Írj kód részletet, amelyben létrehozol egy 4 elemű számokat növekvő sorrendben tartalmazó tömböt! Cseréld meg az elemeit úgy, hogy azok csökkenő sorrendben
+   legyenek!
+4. Írj kód részletet, amelyben létrehozol egy objektumot! Add ehhez az objektumhoz az `elso` és a `masodik` nevű kulcsot, amiknek az értéke egy-egy szám!
+5. Írj kód részletet, amelyben az előző feladatban lérehozott objektumban található értékeket megcsereléd!
+6. Írj kód részletet, amelyben létrehozol egy 5 elemű tömböt! Hozz létre egy változót, aminek az értéke kisebb, mint 5! Helyezd az újonnan létrehozott változóba
+   a tömb azon indexű elemét, amennyi a változó értéke!
+7. Írj kód részletet, amelyben létrehozol egy 3 elemű tömböt, aminek az elemei objektumok!
+8. Írj kód részletet, amelyben létrehozol egy 3 elemű tömböt, amelynek az elemei 3 elemű szám tömbök! A 2. tömb 2. elmenének értékét változtasd `10`-re!
+9. Írj kód részletet, amelyben létrehozol egy szám változót, majd egy újabb változóban letárolod, hogy a szám osztható-e `2`-vel és `5`-tel!
+10. Írj kód részletet, amelyben létrehozol egy 5 számot tartalmazó tömböt, majd egy új változóban letárolod ezek összegét!
+11. Írj kód részletet, amelyben létrehozol 3 akármilyen változót, majd ezek értékét egy object típusú változóba lemented! Ezután írasd ki az objektum összes
+    attribútumát!
