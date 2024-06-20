@@ -93,11 +93,11 @@ switch (<kifejezés>) {
 }
 ```
 
+### Példa
+
 Képzeljük el, hogy a családnak van egy hagyományőrző étele, amit minden ünnep alkalmával elkészítenek, de az adott ünneptől függően kicsit felturbózzák. Ha
 szülinap van, akkor tejszínhabot tesznek rá, ha bolondok napja, akkor jalapeño paprikával bolondítják meg, ha az újévet köszöntik, akkor pezsgővel öntik nyakon
 (elég fura ízlése van a családnak).
-
-### Példa
 
 ```javascript
 let ingredients = ['hús', 'zöldségek'];
@@ -152,9 +152,9 @@ for (<kezdő érték>; <feltétel>; <növelés>) {
 }
 ```
 
-Erre egy jó példa, amikor olyan ételt főzünk, amihez időnként (mondjuk 5 percenként) hozzá kell adni egy alapanyagot.
-
 ### Példa
+
+Erre egy jó példa, amikor olyan ételt főzünk, amihez időnként (mondjuk 5 percenként) hozzá kell adni egy alapanyagot.
 
 ```javascript
 let ingredients = ['karalábé', 'hagyma', 'borsó'];
@@ -249,11 +249,12 @@ A `break` arra szolgál, hogy egy adott ciklust (`for`, `while`, `do...while`) v
 break;
 ```
 
-Igen, ennyire egyszerű a szintaxisa.  
-Ez hasonló, amikor valaki a mikróban szeretne melegíteni valamit 5 percig, de a mikrót indokolatlanul sok időre állítja be. Ekkor vár 5 percet, majd saját
-kezűleg megállítja a mikrót.
+Igen, ennyire egyszerű a szintaxisa.
 
 ### Példa
+
+Ez hasonló, amikor valaki a mikróban szeretne melegíteni valamit 5 percig, de a mikrót indokolatlanul sok időre állítja be. Ekkor vár 5 percet, majd saját
+kezűleg megállítja a mikrót.
 
 ```javascript
 let initialMinutes = 42;
@@ -308,17 +309,60 @@ Az étel már 41 perce melegszik.
 A mikró leállt.
 ```
 
-## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue) -
+## [continue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue)
+
+A `continue`, akárcsak a `break`, egy ciklus utasításon belül helyezhető el. Amikor a kód futása eléri a `continue` utasítást, akkor az adott ciklus véget ér, a
+`continue` után következő utasítások már nem futnak le, helyette elindul a következő ciklus.
+
+### Szintaxis
 
 ```javascript
-let number = 0;
-while (number < 10) {
-    number++;
-    if (number % 2 === 0) {
+continue;
+```
+
+Igen, a `break`-hez hasonlóan, ennek is ennyire egyszerű a szintaxisa.
+
+### Példa
+
+Képzeljük el, hogy átjön egyik barátunk beszélgetni, és szeretnénk meglepni valamilyen étellel. Még nem tudjuk, hogy mit szeretnénk elkészíteni, de a barátunk
+vegetáriánus, ezért a hozzávalókból ki szeretnénk válogatni azokat, amiket felhasználhatunk a sütés-főzés közben.
+
+```javascript
+let ingredients = [
+    {name: 'paprika', vegetarian: true},
+    {name: 'brokkoli', vegetarian: true},
+    {name: 'szalámi', vegetarian: false},
+    {name: 'májkrém', vegetarian: false},
+    {name: 'rizs', vegetarian: true}
+];
+
+for (let index = 0; index < ingredients.length; index++) {
+    if (!ingredients[index].vegetarian) {
         continue;
     }
-    console.log(number);
+    console.log(ingredients[index].name);
 }
+```
+
+Ismételten soronként fogjuk elemezni a kódot. Először is létrehozunk egy tömböt, amiben tároljuk az összes alapanyagot. Egy alapanyagnak tudjuk a nevét (`name`) 
+és azt, hogy vegetáriánusok ehetik-e (`vegetarian`).  
+A `for` ciklus segítségével végigmegyünk az összes elemen. Először a 0. indexű elemet vizsgáljuk meg. Mivel a paprika zöldség, azaz a `vegetarian` értéke
+`true`, ezért nem lépünk bele az `if` ágba. Ezt követően kiíratjuk a képernyőre, hogy `paprika`.  
+A következő elemünk az 1. indexű elem, ami nem más, mint a brokkoli. A brokkolit is fogyaszthatja a vegetáriánus barátunk, így ismételten nem fut meg az `if`
+tartalma. Viszont a képernyőn meg fog jelenni a `brokkoli`.  
+A következő vizsgált elem a szalámi. Mivel a szalámi nem vegetáriánus étel, ezért belépünk az `if`-be. Itt elérjük a `continue` utasítást, aminek köszönhetően a
+jelenlegi ciklus véget ér, nem fut meg több utasítás. Azaz, az összes utasítás, ami a `continue` után következik már nem fut le, tehát jelen esetben nem íratunk
+már ki semmit a képernyőre.  
+Most már az `index` értéke `3`, így a következő vizsgált elem a májkrém. A májkrém szintén hústermék, így ebben az esetben is belépünk az `if`-be. Ismételten
+elérjük a `continue` utasítást, ami miatt a ciklus véget ér, nem írunk ki semmit.  
+Elértünk az utolsó tételhez, a rizshez. A rizs vegetáriánus étel, így nem fut meg az `if`-en belül található utasítás. Helyette kiíratjuk a képernyőre, hogy
+`rizs`.  
+Végigértünk a hozzávalók listáján, most már ellenőrizzük le, hogy mit látunk a képernyőn:
+
+```text
+paprika
+brokkoli
+rizs
 ```
 
 ## Házi feladat
