@@ -71,3 +71,25 @@ let obj = {
     name: name
 };
 console.log(obj.name, obj.age, obj.address);
+
+// Írj kód részletet, amelyben létrehozol egy lakcím adatait tároló objektumot (irányítószám, település, utca, házszám)! Írasd ki a lakcímet!
+let address = {
+    city: 'Nyíregyháza',
+    houseNumber: 5,
+    postalCode: 4400,
+    street: 'Kossuth utca'
+};
+console.log(address.postalCode + ', ' + address.city + ' ' + address.street + ' ' + address.houseNumber + '.');
+
+// Írj kód részletet, amelyben létrehozol `a` és `b` nevű változókat, amelyek egy téglalap oldalainak hosszát tárolják! Számold ki a téglalap kerületét és
+// területét!
+let a = 5;
+let b = 8;
+let perimeter = 2 * (a + b);
+let area = a * b;
+
+// Írj kód részletet, amelyben létrehozol 2 azonos hosszúságú szám tömböt! Hozz létre egy új tömböt, amelyben a két tömb azonos indexű elemeinek összegét
+// tárolod!
+let a = [1, 2, 3, 4];
+let b = [5, 6, 7, 8];
+let c = [a[0] + b[0], a[1] + b[1], a[2] + b[2], a[3] + b[3]];

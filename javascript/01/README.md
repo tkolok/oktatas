@@ -486,3 +486,8 @@ console.log('Szöveg', 150, true);
 10. Írj kód részletet, amelyben létrehozol egy 5 számot tartalmazó tömböt, majd egy új változóban letárolod ezek összegét!
 11. Írj kód részletet, amelyben létrehozol 3 akármilyen változót, majd ezek értékét egy object típusú változóba lemented! Ezután írasd ki az objektum összes
     attribútumát!
+12. Írj kód részletet, amelyben létrehozol egy lakcím adatait tároló objektumot (irányítószám, település, utca, házszám)! Írasd ki a lakcímet!
+13. Írj kód részletet, amelyben létrehozol `a` és `b` nevű változókat, amelyek egy téglalap oldalainak hosszát tárolják! Számold ki a téglalap kerületét és
+    területét!
+14. Írj kód részletet, amelyben létrehozol 2 azonos hosszúságú szám tömböt! Hozz létre egy új tömböt, amelyben a két tömb azonos indexű elemeinek összegét
+    tárolod!
