@@ -3,9 +3,7 @@
 ## [if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 
 Az `if` utasítás célja, hogy bizonyos utasítások csak akkor fussanak meg, ha egy logikai kifejezés értéke `true`. Egyfajta kód elágaztatás. Az `else` ágban
-található utasítások pedig csak akkor futnak meg, ha a logikai kifejezés értéke `false`, de ezt nem kötelező megadni.  
-Az `if` a receptekben azok a részek, amikor azt olvashatjuk, hogy ízlésünk szerint tehetünk bele ezt-azt. Ha olyan kedvünk van, akkor teszünk bele, ha nem
-vagyunk olyan hangulatban, akkor nem teszünk.
+található utasítások pedig csak akkor futnak meg, ha a logikai kifejezés értéke `false`, de ezt nem kötelező megadni.
 
 ### Szintaxis
 
@@ -25,6 +23,9 @@ if (<logikai kifejezés>) {
 
 ### Példák
 
+Az `if` a receptekben azok a részek, amikor azt olvashatjuk, hogy ízlésünk szerint tehetünk bele ezt-azt. Ha olyan kedvünk van, akkor teszünk bele, ha nem
+vagyunk olyan hangulatban, akkor nem teszünk.
+
 ```javascript
 if (isTasty === true) {
     console.log('Finom volt!');
@@ -42,7 +43,7 @@ if (isTasty === true) {
 }
 ```
 
-Abban az esetben, ha az `isTasty` értéke nem `true`, akkor a képernyőn az a szöveg fog megjelenni, hogy _"Ilyet se eszek többet!"_.  
+Abban az esetben, ha az `isTasty` értéke nem `true`, akkor a képernyőn az _"Ilyet se eszek többet!"_ szöveg fog megjelenni.  
 Fontos megjegyezni, hogy az `else` ág nem csak akkor fog megfutni, ha az `isTasty` értéke `false`, hanem bármikor, amikor nem `true`, vagyis akkor is, ha `42`,
 `undefined`, vagy akár egy tömb.
 
