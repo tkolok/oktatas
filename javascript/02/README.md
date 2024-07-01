@@ -220,7 +220,9 @@ while (number < 10) {
 }
 ```
 
-## [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while) -
+## [do...while](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
+
+A `do...while` ugyanúgy működik, mint a `while`, lényegében csak annyi a különbség, hogy a `do...while` ciklusmagja egyszer mindenképpen meg fog futni.
 
 ### Szintaxis
 
@@ -232,11 +234,27 @@ do {
 
 ### Példa
 
+Lássunk egy nagyon egyszerű kód részletet, amiben összehasonlítjuk a 2 utasítást.
+
 ```javascript
-let number = 0;
+let isTrue = false;
+
 do {
-    console.log(number++);
-} while (number < 10);
+    console.log('do...while');
+} while (isTrue);
+
+while (isTrue) {
+    console.log('while');
+}
+```
+
+A `do...while` esetén először lefut a ciklusmag, ami jelen esetben kiírja a képernyőre, hogy `'do...while'`. Ezután megvizsgáljuk, hogy mi az `isTrue` értéke.
+Mivel annak az értéke `false`, ezért a ciklus leáll, jön a következő utasítás.  
+A `while` esetén először megvizsgáljuk, hogy a kifejezés értéke `true`-e. Mivel ez nem teljesül, ezért be se lépünk a `while` törzsébe.  
+Így a fentebbi kód eredménye a következő:
+
+```text
+do...while
 ```
 
 ## [break](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
