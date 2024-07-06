@@ -224,6 +224,8 @@ while (number < 10) {
 
 A `do...while` ugyanúgy működik, mint a `while`, lényegében csak annyi a különbség, hogy a `do...while` ciklusmagja egyszer mindenképpen meg fog futni.
 
+![Különbség while és do...while között](/assets/while-vs-do-while.png)
+
 ### Szintaxis
 
 ```
