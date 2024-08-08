@@ -50,7 +50,7 @@ class Pizza {
     }
 
     get price() {
-        return 1000 + this._ingredients * 200;
+        return 1000 + this._ingredients.length * 200;
     }
 
     set name(value) {

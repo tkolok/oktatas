@@ -22,7 +22,7 @@ array[1] = array[2];
 array[2] = tmp;
 
 // Írj kód részletet, amelyben létrehozol egy objektumot! Add ehhez az objektumhoz az elso és a masodik nevű kulcsot, amiknek az értéke egy-egy szám!
-let obj;
+let obj = {};
 obj.elso = 1;
 obj.masodik = 2;
 
