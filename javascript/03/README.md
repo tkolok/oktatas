@@ -59,12 +59,16 @@ meghívásakor a paraméter értéke nincs megadva, vagy `undefined`, akkor a de
 [rest paraméter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) megadására is, mely célja, hogy nem meghatározott
 számú paramétert is át tudjunk adni egy functionnek. A rest paraméter típusa tömb.  
 A paraméter típusától függően kétféle módon adhatjuk át őket a functionnek. Érték szerint az egyszerű típusokat (string, boolean, number, stb.) és referencia
-szerint az összetett típusokat (object, array). Ezeket úgy kell elképzelni, mintha egy fájlt szeretnénk megosztani. Az érték szerinti átadás esetében ez olyan,
-mintha a fájlt átküldenénk a másik fél számára, így mind a kettőnk számítógépén ott lesz a fájl. Ha az egyikünk módosítja a saját példányát, az nem lesz
-kihatással a másik példányára. A referencia szerinti átadás esetében úgy kell elképzelni ezt, minta a felhőben osztanánk meg egymással a fájlt. Egyetlen egy
-példány létezik a fájlból, és ha az egyikünk módosítja, akkor a másik is látni fogja a módosításokat. Így, ha egy paraméterként kapott stringet módosítunk a
-functionön belül, akkor az nem lesz kihatással az eredeti stringre, de ha egy objektum paramétert módosítunk, akkor az eredeti objektum is módosulni fog (hiszen
-a két objektum ugyanaz). (Sajnos erre nem találtam konyhai példát. :disappointed: )
+szerint az összetett típusokat (object, array).  
+Képzeld el azt a régi családi recept gyűjtemény, amiben azoknak a mennyei sütiknek a receptje van, amik minden nagyobb családi összejövetel alkalmával az
+asztalra kerülnek, örömet okozva kicsiknek és nagyoknak. Ez még mindig a nagyinál, de ha úgy adódik, akkor szívesen odaadja azt. Ha neked épp szükséged lenne
+rá, akkor lemásolhatod az egész gyűjteményt, vagy kölcsönkérheted a nagyitól. Ha lemásolod, akkor az érték szerinti átadásról beszélünk. Ebben az esetben, több
+példány létezik a gyűjteményből, és ha az egyikben átírsz valamit, akkor az a másikra nincs kihatással. Így a saját másolatodat nyugodtan telefirkálhatod, senki
+nem fog érte szólni. Ha viszont kölcsönkéred a nagyitól, akkor a referencia szerinti átadásról beszélünk. Ekkor az eredeti példány van nálad, és ha abba írsz
+bármit, akkor azt a nagyi is fogja látni, és a többi rokon is, aki később kéri kölcsön. Ezért jól vigyázz, hogy mit firkálsz ilyenkor bele, mert ha valami oda
+nem illőt, akkor biztos lehetsz benne, hogy úgy fognak sodrófával megkergetni, mint gyerekkorodban a csínytevéseid után.  
+Tehát érték szerinti átadás esetén egy új példányt hozunk létre a paraméterként átadott értékből, míg referencia szerinti átadásnál az eredeti példányon
+hajthatunk végre műveleteket.
 
 ### Function meghívása
 
