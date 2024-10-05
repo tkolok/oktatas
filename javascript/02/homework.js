@@ -64,13 +64,13 @@ console.log(count);
 let array = [30, 70, 21, 65, 8];
 for (let index = 0; index < array.length; index++) {
     if (array[index] % 2 === 0) {
-        console.log(`${array[index]} osztható 2-vel`);
+        console.log(array[index] + ' osztható 2-vel');
     }
     if (array[index] % 3 === 0) {
-        console.log(`${array[index]} osztható 3-mal`);
+        console.log(array[index] + ' osztható 3-mal');
     }
     if (array[index] % 5 === 0) {
-        console.log(`${array[index]} osztható 5-tel`);
+        console.log(array[index] + ' osztható 5-tel');
     }
 }
 

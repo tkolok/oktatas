@@ -38,7 +38,7 @@ class Pizza {
     }
 
     toString() {
-        return `A ${this.name} hozzávalói: ${this._ingredients.join(', ')}. Ára: ${this.price} Ft.`;
+        return 'A ' + this.name + ' hozzávalói: ' + this._ingredients.join(', ') + '. Ára: ' + this.price + ' Ft.';
     }
 
     get ingredients() {
@@ -46,7 +46,7 @@ class Pizza {
     }
 
     get name() {
-        return `${this._name} pizza`;
+        return this._name + ' pizza';
     }
 
     get price() {
@@ -54,7 +54,7 @@ class Pizza {
     }
 
     set name(value) {
-        console.log(`A ${this._name} pizza új neve: ${value}.`);
+        console.log('A ' + this._name + ' pizza új neve: ' + value + '.');
         this._name = value;
     }
 }

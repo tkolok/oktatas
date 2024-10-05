@@ -149,7 +149,7 @@ document.querySelector('#decrease').addEventListener('click', () => increaseValu
 
 function increaseValue(increment) {
     value += increment;
-    span.innerHTML = `${value}`;
+    span.innerHTML = value;
 }
 ```
 
