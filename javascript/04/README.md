@@ -126,6 +126,24 @@ class {
 }
 ```
 
+### Új példány létrehozás -
+
+Amikor új példányt hozunk létre egy osztályból, akkor egy olyan objektumot hozunk létre, amely rendelkezik az osztályon belül meghatározott adattagokkal,
+metódusokkal. Ezt a `new` kulcsszóval érhetjük el.  
+Ez az a művelet, amikor új pizzát sütünk.
+
+#### Szintaxis
+
+```
+new <osztály neve>(<paraméterek>);
+```
+
+#### Példa
+
+```javascript
+let square = new Rectangle(5, 5);
+```
+
 ### [this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
 A `this` kulcsszóval lehet hivatkozni az adott példányra. Ha több példányt is létrehoztunk egy adott osztályból, akkor a `this` kulcsszó mindig arra a példányra
@@ -169,9 +187,24 @@ class {
 
 ### [static](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static) -
 
-### [instanceof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof) -
-
 ### Inheritance (öröklődés) -
+
+Az öröklődés megértéséhez kiegészítjük a fenti kódot, és létrehozunk egy új `VeganPizza` osztályt.
+
+```javascript
+class VeganPizza extends Pizza {
+    constructor(name, ...ingredients) {
+        super('Vegán ' + name, ingredients);
+    }
+
+    set name(value) {
+        super.name = 'Vegán ' + name;
+    }
+}
+
+const mushroomPizza = new VeganPizza('Gombás', 'gomba', 'kukorica', 'sajt');
+const megaVegaPizza = new VeganPizza('Mega Vega', 'kukorica', 'gomba', 'brokkoli', 'lila hagyma', 'rukkola', 'sajt');
+```
 
 ### [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) -
 
@@ -179,25 +212,29 @@ A `super` mindig a szülőosztályra hivatkozik. Amennyiben a gyermekosztály re
 szülőosztály constructorát fogja meghívni. Ezt az egy esetet leszámítva a segítségével mindig a szülőosztály egy adattagjára vagy metódusára tudunk hivatkozni.
 Például: `super.name` vagy `super.toString()`.
 
-### override -
+### [instanceof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof)
 
-### Új példány létrehozás -
-
-Amikor új példányt hozunk létre egy osztályból, akkor egy olyan objektumot hozunk létre, amely rendelkezik az osztályon belül meghatározott adattagokkal,
-metódusokkal. Ezt a `new` kulcsszóval érhetjük el.  
-Ez az a művelet, amikor új pizzát sütünk.
+Az `instanceof` operátor `true` értéket ad vissza, ha a vizsgált objektum az adott osztály egy példánya. Ha egy objektum példánya egy adott osztálynak, akkor az
+egyben példánya az osztály szülőosztályainak is.  
+Mivel a példában a `VeganPizza` szülőosztálya a `Pizza` osztály, ezért a `mushroomPizza` példánya mind a kettőnek, mert az egy `VeganPizza`-ként lett
+létrehozva. Ezzel szemben a `hamPizza` csak a `Pizza` osztálynak példánya, mert az nem egy `VeganPizza`.
 
 #### Szintaxis
 
 ```
-new <osztály neve>(<paraméterek>);
+<objektum> instanceof <osztály>;
 ```
 
 #### Példa
 
 ```javascript
-let square = new Rectangle(5, 5);
+mushroomPizza instanceof Pizza; // true
+mushroomPizza instanceof VeganPizza; // true
+hamPizza instanceof Pizza; // true
+hamPizza instanceof VeganPizza; // false
 ```
+
+### override -
 
 ## Házi feladat
 
